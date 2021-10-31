@@ -1,0 +1,22 @@
+{
+  "name": "mariellejeantheodore_3_01102021",
+  "version": "1.0.0",
+  "description": "\"Oh my food\" est un service de restauration totalement novateur proposant des menus gastronomiques.",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:.public/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariou9/MarielleJeanTheodore_3_01102021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mariou9/MarielleJeanTheodore_3_01102021/issues"
+  },
+  "homepage": "https://github.com/mariou9/MarielleJeanTheodore_3_01102021#readme",
+  "dependencies": {
+    "sass": "^1.43.2"
+  }
+}

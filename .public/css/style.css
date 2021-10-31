@@ -1,0 +1,20 @@
+body {
+  background: #fff;
+  margin: 0px;
+  padding: 0px;
+}
+
+.cup {
+  height: 140px;
+  width: 180px;
+  border: 6px solid #fff;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  border-radius: 0px 0px 70px 70px;
+  background: url(/img/coffee.png);
+  box-shadow: 0px 0px 0px 6px #99e2d0;
+  background-repeat: repeat-x;
+}
+
+/*# sourceMappingURL=style.css.map */
