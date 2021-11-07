@@ -79,6 +79,7 @@ body{
   } 
   
   .cup_of_coffee{
+      z-index: 10;
       animation: fill 3s ease-in-out forwards;
       animation-delay: 0.1s;
   }
@@ -163,7 +164,7 @@ header{
     }
     .present_button{
         border-radius: 45px;
-        background-color: $color-primary;
+        background-color: #9356DC;
         font-size: 20px !important;
         font-weight: bold;
         color: #fff;
@@ -190,7 +191,7 @@ header{
        width: auto;
        height: auto;
        /*background: linear-gradient(48deg,#9356dc 10%, #ff79da 30%);*/
-       background-color: radial-gradient(circle, lighten($color-primary, 5) 0%, darken($color-primary, 10)100%);
+       background-color: radial-gradient(circle, lighten(#9356DC, 5) 0%, darken(#9356DC, 10)100%);
        opacity: 0;
        z-index: -1;
        transition: opacity .250ms;
@@ -240,6 +241,16 @@ header{
     grid-gap:5px;
     grid-template-areas: "resto-1 resto-2"
     "resto-3 resto-4";
+
+    @media (max-width:600px){
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: "resto-1"
+    "resto-2"
+    "resto-3"
+    "resto-4";
+    }
 }
 .Resto_figure{
 position: relative;
@@ -252,8 +263,8 @@ border-radius: 20px;
 background-color: white;
 box-shadow: 1px 1px 17px -9px rgba(0,0,0,0.75);
 }
+
 .Resto_figure img {
-background-color: royalblue;
 object-fit: cover;
 border-radius: 20px 20px 0 0;
 width: 100%;
@@ -310,4 +321,190 @@ footer{
         margin-bottom: 15px;
         font-size: 1rem;
     }     
-}    
+} 
+
+/*MENUS* 
+LE DELICE DES SENS*
+
+Header*/
+
+.tag img{
+    object-fit: cover;
+    width: 100%;
+    height: 500px;
+}
+
+.container_menus{
+    background-color: rgb(209, 207, 207);
+    height: 100%;
+    border-radius: 20px 20px 0 0;
+}
+.menus-title{
+    font-weight: normal;
+    font-size: 2.5rem;
+}
+
+/*Animation du coeur*/
+.heart_btn{ 
+    cursor: pointer; 
+    &:active{
+        & +.progress{
+            &> .progress_bar{
+                background-color:#9356DC ;
+                transform: scaleX(1);
+            }
+        }
+    }
+
+}
+.progress{
+    &_bar{
+        background-color: #9356DC;
+        transform-origin: 0%;
+        transform: scaleX(0);
+        transition: transform 1000ms cubic-bezier(.32, 0, 0.07, 1);
+    }
+}
+
+.menus{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: "section_title1 section_title2 section_title3"
+    "entree-1 plat-4 dessert-7"
+    "entree-2 plat-5 dessert-8"
+    "entree-3 plat-6 dessert-9";
+    gap: 10px;
+}
+.section_title1{
+    grid-area: section_title1;
+}
+.section_title2{
+    grid-area: section_title2;
+}
+.section_title3{
+    grid-area: section_title3;
+}
+.entree-1{
+    grid-area: entree-1;
+}
+.entree-2{
+    grid-area: entree-2;
+}
+.entree-3{
+    grid-area: entree-3;
+}
+.plat-4{
+    grid-area: plat-4;
+}
+.plat-5{
+grid-area: plat-5;
+}
+.plat-6{
+    grid-area: plat-6;
+}
+.dessert-7{
+    grid-area: dessert-7;
+}
+.dessert-8{
+    grid-area: dessert-8;
+}
+.dessert-9{
+    grid-area: dessert-9;
+}
+
+
+/*TITRES*/
+.section_title1 {
+    font-size: 40px;
+    font-weight: 100;
+    position: relative;
+}
+.section_title1::before{
+    content: "";
+    position: absolute;
+    background-color: #99E2D0;
+    width: 50px;
+    height: 7px;
+    bottom: 0;
+}
+.section_title2 {
+    font-size: 40px;
+    font-weight: 100;
+    position: relative;
+}
+.section_title2::before{
+    content: "";
+    position: absolute;
+    background-color: #99E2D0;
+    width: 50px;
+    height: 7px;
+    bottom: 0;
+}
+.section_title3 {
+    font-size: 40px;    
+    font-weight: 100;
+    position: relative;
+}
+.section_title3::before{
+    content: "";
+    position: absolute;
+    background-color: #99E2D0;
+    width: 50px;
+    height: 7px;
+    bottom: 0;
+}
+.menu_list{
+    position: relative;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 1px 1px 17px -9px rgba(0,0,0,0.75);
+}
+/*BTN COMMANDER*/
+.command{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.command_button{
+    border-radius: 45px;
+    background-color:#9356DC ;
+    font-size: 20px !important;
+    font-weight: bold;
+    color: #fff;
+    padding: 30px 30px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;    
+    &:hover{
+        border-radius: 45px;
+        transform: translate(0, -6px);
+        &::after{
+            border-radius: 45px;
+            opacity: 1;
+    }
+}
+    &::after{
+   border-radius: 45px;
+   content: "";
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   width: auto;
+   height: auto;
+   /*background: linear-gradient(48deg,#9356dc 10%, #ff79da 30%);*/
+   background-color: radial-gradient(circle, lighten(#9356DC, 5) 0%, darken(#9356DC, 10)100%);
+   opacity: 0;
+   z-index: -1;
+   transition: opacity .250ms;
+  }
+}
+.command_button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

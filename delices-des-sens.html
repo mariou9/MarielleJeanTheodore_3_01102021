@@ -5,21 +5,161 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Liaisons de style-->
-<link rel="stylesheet" href="public/css/style.css">
+<link rel="stylesheet" href=".public/css/style.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" 
 integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" 
 crossorigin="anonymous">
     <title>Oh my food!_Le délice des sens</title>
 </head>
 <body>
-  <header>
-      <a href="index.html"><h1>oh my food</h1></a>
-      <a href="index.html"><i class="fas fa-arrow-left"></i></a>
-  </header> 
-  <main>
-      <div class="tag">
+  
+ <!--HEADER-->
+    <header>
+        <div class="header_logo"> 
+            <a href="index.html"><img src="./img/ohmyfood.png" alt="logo_du_restaurant"></a> 
+        </div>
+        <div class="localisation">        
+        <a href="index.html"><i class="fas fa-arrow-left"></i></a>
+        </div>
+    </header> 
+   
+    <main>
+     
+    <section>
+        <div class="tag">
+            <img src="./img/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Le delice des sens"></div>
+    
+    </section>
+    <section class="container_menus">
+     
+             <div class="heart">   
+                     <h1 class="menus-title">Le délice des sens<i class="far fa-heart heart_btn"></i></h1>
+                    <!----<div class="heart_btn"><i class="far fa-heart heart_btn"></i></div>-->
+                     <div class="progress">
+                          <div class="progress_bar"></div>
+                     </div>
+            </div><!--coeur animé-->
+        
+ <!--ENTREES-->           
+    <div class="menus">
+             <h2 class="section_title1">Entrées</h2>
+                 <div class="menu_list" id="entree-1">
+                 <a href="#"> 
+                    <div class="menus_description">
+                    <h3 class="menus_description--title">Tartare de thon</h3>
+                    <p class="menus_description--price">Assaisonné au yuzu</p>
+                    <span>25<i class="fas fa-euro-sign"></i></span>
+                          <div class="check_box">
+                             <i class="far fa-check-circle"></i></div>      
+                    </div>
+                    </a>  
+                 </div>
+
+                <div class="menu_list" id="entree-2">
+                <a href="#">
+                    <div class="menus_description">
+                      <h3 class="menus_description--title">Bouchée de homard croustillant</h3>
+                      <p class="menus_description--price">Et sa farandole de petits légumes</p>
+                      <span>35<i class="fas fa-euro-sign"></i></span>
+                           <div class="check_box">
+                              <i class="far fa-check-circle"></i></div>
+                    </div>                   
+                </a> 
+                </div>
+
+                 <div class="menu_list" id="entree-3">
+                <a href="#">
+                     <div class="menus_description">
+                      <h3 class="menus_description--title">Velouté de cèpes</h3>
+                      <p class="menus_description--price">Aux truffes</p>
+                     <span>20<i class="fas fa-euro-sign"></i></span>
+                          <div class="check_box">
+                            <i class="far fa-check-circle"></i></div>
+                      </div>                    
+                </a> 
+                 </div>
+<!--PLATS-->
+                 <h2 class="section_title2">Plats</h2>
+                <div class="menu_list" id="plat-4">
+                <a href="#">
+                    <div class="menus_description">
+                    <h3 class="menus_description--title">Poulet rôti aux herbes de Provence</h3>
+                    <p class="menus_description--price">Et sa crème de truffe</p>
+                    <span>40<i class="fas fa-euro-sign"></i></span>
+                          <div class="check_box">
+                             <i class="far fa-check-circle"></i></div>
+                    </div>                   
+                </a>
+                </div>
+
+            <div class="menu_list" id="plat-5">
+                <a href="#">
+                    <div class="menus_description">
+                      <h3 class="menus_description--title">Langouste rôtie</h3>
+                      <p class="menus_description--price">Et ses légumes de saison</p>
+                      <span>35<i class="fas fa-euro-sign"></i></span>
+                        <div class="check_box">
+                             <i class="far fa-check-circle"></i></div>
+                    </div>    
+                 </a>
+             </div>
+
+            <div class="menu_list" id="plat-6">
+                <a href="#">
+                    <div class="menus_description">
+                      <h3 class="menus_description--title">Côte de boeuf angus</h3>
+                      <p class="menus_description--price">Et sa purée de panais</p>
+                     <span>44<i class="fas fa-euro-sign"></i></span>
+                          <div class="check_box">
+                              <i class="far fa-check-circle"></i></div>
+                    </div>                   
+                 </a>
+            </div>
+<!--DESSERTS-->
+            <h2 class="section_title3">Desserts</h2>
+            <div class="menu_list" id="dessert-7">
+                <a href="#">
+                    <div class="menus_description">
+                    <h3 class="menus_description--title">Farandole de desserts</h3>
+                    <p class="menus_description--price">Du chef</p>
+                    <span>18<i class="fas fa-euro-sign"></i></span>
+                          <div class="check_box">
+                              <i class="far fa-check-circle"></i></div>
+                    </div>    
+                </a>
+           </div>
+
+            <div class="menu_list" id="dessert-8">
+                <a href="#">
+                      <div class="menus_description">
+                      <h3 class="menus_description--title">Crème brûlée</h3>
+                      <p class="menus_description--price">Revisitée</p>
+                      <span>22<i class="fas fa-euro-sign"></i></span>
+                            <div class="check_box">
+                                  <i class="far fa-check-circle"></i></div>
+                      </div>      
+                </a>
+             </div>
+
+            <div class="menu_list" id="dessert-9">
+                <a href="">
+                       <div class="menus_description">
+                       <h3 class="menus_description--title">Tiramisu</h3>
+                       <p class="menus_description--price">A la noisette</p>
+                       <span>23<i class="fas fa-euro-sign"></i></span>
+                             <div class="check_box">
+                                 <i class="far fa-check-circle"></i></div>
+                        </div>                        
+                </a>
+            </div>
+                <div class="command"><a href="#" class="command_button">Commander</a></div>
+        </div>
+                  
+      </section>
+</main>
+      <!--<div class="tag">
           <H1>Le délice des sens</H1>
-          <div class="heart"></div><!--coeur animé-->
+          <div class="heart"></div><!--coeur animé
       </div>
       <div class="container_menu">
           <div class="menu">
@@ -160,8 +300,8 @@ crossorigin="anonymous">
          
 
           </div>
-      </div>
-  </main> 
+      </div>-->
+  
 
   <footer>
     <div class="logo"></div>
@@ -169,7 +309,7 @@ crossorigin="anonymous">
 
     <ul>
         <li>
-            <p><i class="fas fa-ustensils"></i> Proposer un restaurant</p>
+            <p><i class="fas fa-utensils"></i> Proposer un restaurant</p>
         </li>
         <li>
             <p><i class="fas fa-hands-helping"></i>Devenir partenaire</p>
