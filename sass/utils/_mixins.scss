@@ -1,0 +1,24 @@
+/*MEDIA QUERIES*/
+@mixin mobile{
+    @media screen and (min-width: 576px){
+      @content; 
+    };
+}
+
+@mixin tablet{
+    @media screen and (min-width: 768px){
+      @content; 
+    };
+}
+
+/*Application large and x-large deskstop*/
+@mixin desktop{  
+    @media screen and (min-width: 992px){
+      @content; 
+    };
+}
+@mixin tv{
+    @media screen and (min-width: 1400px){
+      @content; 
+    };
+}

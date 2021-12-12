@@ -22,7 +22,7 @@ crossorigin="anonymous">
         <!--HEADER-->
     <header class="header">
         <div class="header_logo"> 
-            <img src="./img/ohmyfood.png" alt="logo_du_restaurant">  
+            <h1>Ohmyfood!</h1>
         </div>
         <div class="localisation">
             <i class="fas fa-map-marker-alt"></i>
@@ -35,7 +35,8 @@ crossorigin="anonymous">
     <section class="intro"> 
             <div class="presentation presentation--tablet presentation--mobile">
                 <h2 class="info1">Réservez le menu qui vous convient</h2>
-                <p class="info2"> Découvrez des restaurants d'exception, sélectionnés par nos soins</p>
+                <p class="info2"> Découvrez des restaurants d'exception,
+                    sélectionnés par nos soins</p>
                 <a href="#" class="present_button">Explorer nos restaurants</a>
             </div> 
     </section>
@@ -44,11 +45,14 @@ crossorigin="anonymous">
             <div class="fonctionnement">
                 <h2>Fonctionnement</h2>
                    <ol class="fonction_buttons">
-                       <li class="fonction_button"><i class="fas fa-mobile-alt icon"></i>Choisissez un restaurant</li> 
+                       <li class="fonction_button"><span>1</span>
+                        <i class="fas fa-mobile-alt icon"></i>Choisissez un restaurant</li> 
                        
-                       <li class="fonction_button"><i class="fas fa-list-ul icon"></i>Composez votre menu</li>
+                       <li class="fonction_button"><span>2</span>
+                        <i class="fas fa-list-ul icon"></i>Composez votre menu</li>
                        
-                       <li class="fonction_button"><i class="fas fa-store icon"></i>Dégustez au restaurant</li>
+                       <li class="fonction_button"><span>3</span>
+                        <i class="fas fa-store icon"></i>Dégustez au restaurant</li>
                         
                    </ol>
             </div>
@@ -56,7 +60,7 @@ crossorigin="anonymous">
     <!--LISTE DES RESTAURANTS--> 
         <section class="Resto">
             <h2>Restaurants</h2>
-            <div class="Restos">
+            <div class="Restos">               
             <div class="Resto_figure" id="resto-1">
                 <div class="Resto_figure--description">
                     <a href="lapalettedugout.html"></a>
@@ -64,7 +68,14 @@ crossorigin="anonymous">
                     <span class="resto_img">Nouveau</span>
                     <h3 class="resto_title">La palette du goût</h3>
                     <p class="resto_site">Ménilmontant</p>
-                    <div class="heart_icon"><i class="far fa-heart"></i></div>
+                    <div class="heart_icon"><!--Coeur animé-->
+                            <svg class="heart-main" viewBox="0 0 512 512" width="20" title="heart">
+                              <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
+                            </svg>
+                            <svg class="heart-background" viewBox="0 0 512 512" width="20" title="heart">
+                              <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" /> 
+                           </svg> 
+                    </div>
                 </div>
             </div>
 
@@ -75,9 +86,17 @@ crossorigin="anonymous">
                     <span class="resto_img">Nouveau</span>
                     <h3 class="resto_title">La note enchantée</h3>
                     <p class="resto_site">Charonne</p>
-                    <div class="heart_icon"><i class="far fa-heart"></i></div>
+                        <div class="heart_icon">
+                            <svg class="heart-main" viewBox="0 0 512 512" width="20" title="heart">
+                              <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
+                            </svg>
+                            <svg class="heart-background" viewBox="0 0 512 512" width="20" title="heart">
+                              <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" /> 
+                           </svg> 
+                        </div><!--Coeur animé-->
+                    </div>
                 </div>
-            </div>
+            
 
             <div class="Resto_figure" id="resto-3">
                 <div class="Resto_figure--description">
@@ -85,9 +104,17 @@ crossorigin="anonymous">
                     <img src="/img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="A la francaise">
                     <h3 class="resto_title">A la française</h3>
                     <p class="resto_site">Cité rouge</p>
-                    <div class="heart_icon"><i class="far fa-heart"></i></div>
+                        <div class="heart_icon">
+                            <svg class="heart-main" viewBox="0 0 512 512" width="20" title="heart">
+                              <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
+                            </svg>
+                            <svg class="heart-background" viewBox="0 0 512 512" width="20" title="heart">
+                              <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" /> 
+                           </svg> 
+                        </div><!--Coeur animé-->                   
                 </div>
             </div>
+            
 
             <div class="Resto_figure" id="resto-4">
                 <div class="Resto_figure--description">
@@ -95,10 +122,18 @@ crossorigin="anonymous">
                     <img src="/img/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Le delice des sens">
                     <h3 class="resto_title">Le délice des sens</h3>
                     <p class="resto_site">Folie-Méricourt</p>
-                    <div class="heart_icon"><i class="far fa-heart"></i></div>
-                </div>
+                        <div class="heart_icon">
+                            <svg class="heart-main" viewBox="0 0 512 512" width="20" title="heart">
+                              <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
+                            </svg>
+                            <svg class="heart-background" viewBox="0 0 512 512" width="20" title="heart">
+                              <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" /> 
+                           </svg> 
+                        </div><!--Coeur animé-->     
+                 </div>
             </div>
-            </div>
+        </div>  
+        </div> 
             <!--<div class="container">
                 <a href="Lapalettedugout.html"></a>
                     <div class="resto_1">

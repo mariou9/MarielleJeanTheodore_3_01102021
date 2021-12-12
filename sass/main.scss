@@ -1,34 +1,68 @@
 /*Définition des polices*/
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 
-$font-logo-titre:"Shrikland","cursive";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+@import "utils/variables";
+@import "utils/mixins";
+
+
+$font-logo-titre:"Shrikhand","cursive";
 $font-txt: "Roboto",sans-serif;
 
+:root {
+    --purple-light:#FF79DA;
+    --purple:#9356DC;
+  }
 h1{
     font-family: $font-logo-titre;
-    font-weight: normal;
+    font-weight: bold;
 }
 
 h2,h3, h4, p, li, div, a{
     font-family: $font-txt;
-    font-weight: 1000;
+    font-weight: normal;
 }
 
 a{
     text-decoration: none;
 }
 
-$color-primary:#9356DC;/*BTN*/
-$color-secondary:#ff79DA;/*btn*/
-$color-tertiary:#99E2D0;
+/*$color-primary:#9356DC;/*BTN
+$color-secondary:#ff79DA;/*btn
+$color-tertiary:#99E2D0;*/
+
+*{
+    box-sizing: border-box;
+}
 
 body{
     background: #fff;
     margin: 0px;  
-    padding: 0px; 
-    font-family: "Roboto",cursive;
+    padding: 0px;     
+}
+
+main{
+   /* max-width: 1440px;
+    min-width: 600px;*/
+    
+    display: flex;
+    flex-direction: column;
+    @include mobile{
+        width: 576px;
+         display: flex;
+        /* flex-wrap: wrap;*/
+    } 
+    @include tablet{
+        width: 768px;
+        margin: auto;
+    }
+    @include desktop{
+        width: 992px;
+    } 
+    @include tv{
+        width: 1440px;
+    }
 }
 
 /*loader spinner*/
@@ -37,6 +71,7 @@ body{
     width: 200px;
     border: 6px solid #fff;
     position: absolute;
+    z-index: 10001;
     top: 40%;
     left: 40%;  
     border-radius: 0px 0px 70px 70px;
@@ -70,8 +105,9 @@ body{
   .load_handle{
       height: 70px;
       width: 40px;
+      z-index: 10001;
       background-color: transparent;
-      border: 6px solid #99E2D0;
+      border: 6px solid $color-tertiary;
       position: absolute;
       left: 755px;
       bottom: 290px;
@@ -79,16 +115,12 @@ body{
   } 
   
   .cup_of_coffee{
-      z-index: 10;
+      z-index: 10001;
+      overflow: hidden;
       animation: fill 3s ease-in-out forwards;
       animation-delay: 0.1s;
   }
 
-main{
-    max-width: 1440px;
-    margin: auto;
-    width: 98%;
-}
 
 /*HEADER*/
 header{
@@ -105,7 +137,9 @@ header{
            font-size: 1.5rem;
            color: black;
        }
-
+.header_logo{
+ font-size: 20px;
+}
         & .localisation{
             background-color: rgb(233, 230, 230);
             display: flex;
@@ -119,84 +153,90 @@ header{
         }
         & i{
         color:grey;
-        padding-right: 20px;
+        padding-right: 15px;
+        padding-left: -15px;
         }
 
         & p{
             font-weight: bold;
             font-size: 1.2rem;
             color: grey;
+            margin-left: -5px;
         }
     }
   
 /*PRESENTATION*/
+
+.intro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 375px;
+@include tablet{
+    width: 768px;
+}
+}
     .presentation{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         width: 600px;
          background-color:rgb(172, 167, 167);
-         text-align: center;
          padding-top: 3rem;
          padding-bottom: 3rem;
          line-height: 3rem;
          color:grey;
         
-        &--tablet{
+         &--tablet{
              display: none;
          }
         &--mobile{
-            display: block;
+           display: block;
         }
     }
     .info1 {
         color: black;
-        text-align: center;
-        margin-left:50px ;
+       /* text-align: center;*/
+        margin-left: 25px;
+        font-size: 1.3rem;
         font-weight: bold;
     }
     
     .info2{
         color: black;
         margin-left: 50px;
+        font-size: normal;
+        word-wrap: break-word;
+        line-height: none;
     }
 
-    /*FONCTIONNEMENT*/   
-    .fonctionnement h2{
-        font-weight: medium;
-        font-size: 1.5rem;
-    }
     .present_button{
         border-radius: 45px;
-        background-color: #9356DC;
+        margin-left: 45px;
+        background-image: linear-gradient(to left, $color-secondary, $color-primary);
         font-size: 20px !important;
         font-weight: bold;
         color: #fff;
         padding: 30px 30px;
-        position: relative;
-        z-index: 1;
+        /*position: relative;
+         z-index: 1;*/
+        background-size: 200%;
+        transition: 0.6s;
         cursor: pointer;    
         &:hover{
             border-radius: 45px;
+            background-position: right;
             transform: translate(0, -6px);
-            &::after{
-                border-radius: 45px;
-                opacity: 1;
         }
-}
-        &::after{
-       border-radius: 45px;
-       content: "";
-       position: absolute;
-       top: 0;
-       right: 0;
-       bottom: 0;
-       left: 0;
-       width: auto;
-       height: auto;
-       /*background: linear-gradient(48deg,#9356dc 10%, #ff79da 30%);*/
-       background-color: radial-gradient(circle, lighten(#9356DC, 5) 0%, darken(#9356DC, 10)100%);
-       opacity: 0;
-       z-index: -1;
-       transition: opacity .250ms;
-      }
+    } 
+
+    /*FONCTIONNEMENT*/   
+ .fonctionnement h2{
+        font-size: 1.5rem;
+        margin: 20px;
+        padding-top: 20px;
     }
+        
  .fonction_buttons {
     display: inline-flex;
     flex-direction: row;
@@ -205,44 +245,94 @@ header{
  }     
  .fonction_button {
     display: inline;
-    margin-left: 30px;
-    font-weight: 700;
+    margin-left: 50px;
+    font-weight: 500;
+    position: relative;
+    border: none;
     text-align: center;
-    border: solid 1px grey;
-    background-color: rgb(238, 236, 236);
-    padding: 0 20px 0 0;
-    margin-top: 10px;
-    border-radius: 200px;
+    background-color: rgb(240, 238, 238);
+    padding: 0 20px 20px 0;
+    margin-top: 25px;
+    border-radius: 25px;
     cursor: pointer;
     box-shadow: 0px 0px 6px 0px #0000002E;
- }
+    & span{
+            background-color: $color-primary;
+            position: absolute;
+            left: -1rem;
+            bottom: 1.6rem;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;   
+         } 
+    }
  
 .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding:  30px;
     margin-right: 15px;
     margin-left: 15px;
+    height: 25px;
+    width: 25px;
     color: grey;
 }
 .icon:hover{
     cursor: pointer;
-    color: $color-primary;
+    color:$color-primary;
     }
 
 /*RESTAURANTS*/ 
-.Resto{
+.Resto{   
     background-color: rgb(209, 207, 207);
+    height: 1000px;
+   /* max-width: 1440px;
+    min-width: 576px;*/
+    width: 375px;
+    @include tablet{
+    width: 768px;
     height: 650px;
-    margin-bottom: 60px;
 }
-.Restos{   
+}
+.Resto h2{
+    margin: 20px;
+    padding-top: 20px;
+}
+
+.Restos{ 
+    /*@media screen and (min-width:600px)*/@include mobile{ 
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: "resto-1"
+        "resto-2"
+        "resto-3"
+        "resto-4"; 
+        min-width: 576px;       
+ } 
+ @include tablet{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: auto;
     grid-gap:5px;
     grid-template-areas: "resto-1 resto-2"
     "resto-3 resto-4";
-
-    @media (max-width:600px){
+    min-width: 768px;   
+ }
+}  
+  /*  display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto;
+    grid-gap:5px;
+    grid-template-areas: "resto-1 resto-2"
+    "resto-3 resto-4";
+    
+    @media screen and (max-width:668px){ 
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 1fr);
@@ -250,13 +340,14 @@ header{
     "resto-2"
     "resto-3"
     "resto-4";
-    }
-}
+    }  */
+
+
 .Resto_figure{
 position: relative;
-width: 90%;
+width: 87%;
 height: 89%;
-margin-top: 25px;
+margin-top: 20px;
 margin-right: 15px;
 margin-left: 25px;
 border-radius: 20px;
@@ -275,9 +366,9 @@ margin: 0;
     padding-left: 10px;
     padding-top: -10px;
     padding-bottom: -10px;
-    margin-top: 5px;
-
+    margin-top: 5px;   
 }
+
 .resto_site{
     margin-top: -10px;
     padding-left: 10px;
@@ -285,12 +376,108 @@ margin: 0;
 .Resto_figure--description{
     height: 100%;
     margin: 0;
+    position: relative;
+    & span{
+        background-color: $color-tertiary;
+        position: absolute;
+        width: 75px;
+        height: 30px;
+        right: 1rem;
+        top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10%;
+        color: #179b73;
+    }
+}
+/*Coeur anime*/
+.heart_icon {
+    fill: transparent;
+    stroke: var(--purple);
+    stroke-width: 20;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+} 
+
+svg {
+    overflow: visible;
+    width: 30px;
+}
+  
+path {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 1550;
+    transform-origin: center;
+}
+  
+.heart-background {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    stroke: none;
+}
+  
+.heart-main:hover path {
+    animation: stroke-animation 2s ease-in-out forwards;
+}
+  
+.heart-main:hover ~ .heart-background path {
+    animation: fade-animation 2s ease-in-out forwards;
+}
+  
+@keyframes stroke-animation {
+    0% {
+      stroke-dashoffset: 0;
+    }
+    30% {
+      stroke-dashoffset: 1550;
+    }
+    60% {
+      stroke-dashoffset: 3100;
+      fill: transparent;
+      transform: scale(1);
+    }
+    80% {
+      fill: var(--purple);
+      transform: scale(1.1);
+    }
+    90% {
+      transform: scale(1);
+    }
+    100% {
+      stroke-dashoffset: 3100;
+      fill: var(--purple);
+    }
+  }
+  
+@keyframes fade-animation {
+    70% {
+      fill: transparent;
+      transform: scale(1);
+    }
+    80% {
+      fill: var(--purple-light);
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2.5);
+      opacity: 0;
+    }
 }
 
 /*FOOTER*/
 footer{
     background-color: rgb(49, 49, 49);
     padding-bottom: 30px;
+    margin-top: 0px;
     font-size: 1.2rem;
     color: white;
 
@@ -299,7 +486,7 @@ footer{
         padding-top: 0;
         padding-left: 40px;
         margin-bottom: 15px;
-        font-family: $font-logo-titre;
+        font-family: "Shrikhand";
         font-style: oblique;     
     }
     & ul{
@@ -329,9 +516,9 @@ LE DELICE DES SENS*
 Header*/
 
 .tag img{
-    object-fit: cover;
     width: 100%;
-    height: 500px;
+    object-fit: cover;
+    height: 550px;
 }
 
 .container_menus{
@@ -345,7 +532,7 @@ Header*/
 }
 
 /*Animation du coeur*/
-.heart_btn{ 
+/*.heart_btn{ 
     cursor: pointer; 
     &:active{
         & +.progress{
@@ -364,7 +551,7 @@ Header*/
         transform: scaleX(0);
         transition: transform 1000ms cubic-bezier(.32, 0, 0.07, 1);
     }
-}
+}*/
 
 .menus{
     display: grid;
@@ -470,23 +657,30 @@ grid-area: plat-5;
 }
 .command_button{
     border-radius: 45px;
-    background-color:#9356DC ;
+    background-image: linear-gradient(to left, $color-secondary, $color-primary);
     font-size: 20px !important;
+    text-transform: uppercase;
     font-weight: bold;
     color: #fff;
     padding: 30px 30px;
-    position: relative;
-    z-index: 1;
+    background-size: 200%;
+    transition: 0.6s;
+   /* position: relative;
+    z-index: 1;*/
     cursor: pointer;    
     &:hover{
         border-radius: 45px;
+        background-position: right;
         transform: translate(0, -6px);
-        &::after{
+    }
+}    
+
+       /* &::after{
             border-radius: 45px;
             opacity: 1;
     }
 }
-    &::after{
+ /*   &::after{
    border-radius: 45px;
    content: "";
    position: absolute;
@@ -496,13 +690,13 @@ grid-area: plat-5;
    left: 0;
    width: auto;
    height: auto;
-   /*background: linear-gradient(48deg,#9356dc 10%, #ff79da 30%);*/
-   background-color: radial-gradient(circle, lighten(#9356DC, 5) 0%, darken(#9356DC, 10)100%);
+   background: #9356dc;
+   background: linear-gradient(209deg,#9356dc 10%, #ff79da 90%);
    opacity: 0;
    z-index: -1;
    transition: opacity .250ms;
   }
-}
+}*/
 .command_button{
     display: flex;
     justify-content: center;
