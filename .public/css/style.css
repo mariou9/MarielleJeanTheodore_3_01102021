@@ -5,80 +5,21 @@
 /*COULEURS*/
 /*BTN*/
 /*btn*/
+/*POLICES*/
 /*MEDIA QUERIES*/
-/*MEDIA QUERIES*/
-/*Application large and x-large deskstop*/
-:root {
-  --purple-light:#FF79DA;
-  --purple:#9356DC;
-}
-
-h1 {
-  font-family: "Shrikhand", "cursive";
-  font-weight: bold;
-}
-
-h2, h3, h4, p, li, div, a {
-  font-family: "Roboto", sans-serif;
-  font-weight: normal;
-}
-
-a {
-  text-decoration: none;
-}
-
-/*$color-primary:#9356DC;/*BTN
-$color-secondary:#ff79DA;/*btn
-$color-tertiary:#99E2D0;*/
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background: #fff;
-  margin: 0px;
-  padding: 0px;
-}
-
-main {
-  /* max-width: 1440px;
-   min-width: 600px;*/
-  display: flex;
-  flex-direction: column;
-}
-@media screen and (min-width: 576px) {
-  main {
-    width: 576px;
-    display: flex;
-    /* flex-wrap: wrap;*/
-  }
-}
-@media screen and (min-width: 768px) {
-  main {
-    width: 768px;
-    margin: auto;
-  }
-}
-@media screen and (min-width: 992px) {
-  main {
-    width: 992px;
-  }
-}
-@media screen and (min-width: 1400px) {
-  main {
-    width: 1440px;
-  }
-}
-
+/*Application large devices*/
+/*Application x-large devices*/
 /*loader spinner*/
 .load_cup {
   height: 140px;
   width: 200px;
   border: 6px solid #fff;
   position: absolute;
-  z-index: 10001;
-  top: 40%;
-  left: 40%;
+  z-index: 1;
+  top: 50%;
+  bottom: 50%;
+  left: 25%;
+  right: 50%;
   border-radius: 0px 0px 70px 70px;
   background: url(/img/coffee.png);
   box-shadow: 0px 0px 0px 6px #99E2D0;
@@ -105,122 +46,61 @@ main {
     opacity: 0;
   }
 }
-.load_handle {
-  height: 70px;
-  width: 40px;
-  z-index: 10001;
-  background-color: transparent;
-  border: 6px solid #99E2D0;
-  position: absolute;
-  left: 755px;
-  bottom: 290px;
-  border-radius: 0px 25px 80px 0px;
-}
-
+/*.load_handle{
+    height: 70px;
+    width: 40px;
+    z-index: 10001;
+    background-color: transparent;
+    border: 6px solid $color-tertiary;
+    position: absolute;
+    left: 730px;
+    bottom: 320px;
+    border-radius: 0px 25px 80px 0px;   
+} */
 .cup_of_coffee {
-  z-index: 10001;
-  overflow: hidden;
-  animation: fill 3s ease-in-out forwards;
-  animation-delay: 0.1s;
+  z-index: 1;
+  animation: fade-out 6s forwards;
+  /* overflow: hidden;
+   animation: fill 3s ease-in-out infinite;*/
+  animation-delay: 5s;
 }
 
-/*HEADER*/
-header {
-  text-align: center;
-  position: relative;
-}
-header a {
-  color: black;
-}
-header .fa-arrow-left {
-  cursor: pointer;
-  position: absolute;
-  left: 2rem;
-  top: 0.8rem;
-  font-size: 1.5rem;
-  color: black;
-}
-header .header_logo {
-  font-size: 20px;
-}
-header .localisation {
-  background-color: #e9e6e6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding-top: 3px;
-  margin-top: 0%;
-  margin-bottom: 0%;
-  box-shadow: inset 0 2px 4px -3px grey;
-}
-header i {
-  color: grey;
-  padding-right: 15px;
-  padding-left: -15px;
-}
-header p {
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: grey;
-  margin-left: -5px;
-}
-
-/*PRESENTATION*/
-.intro {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 375px;
-}
-@media screen and (min-width: 768px) {
-  .intro {
-    width: 768px;
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
-
-.presentation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 600px;
-  background-color: #aca7a7;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  line-height: 3rem;
-  color: grey;
-}
-.presentation--tablet {
-  display: none;
-}
-.presentation--mobile {
-  display: block;
+/*ACCUEIL*/
+.accueil {
+  position: relative;
+  animation: fade-in 5s ease-in;
 }
 
-.info1 {
-  color: black;
-  /* text-align: center;*/
-  margin-left: 25px;
-  font-size: 1.3rem;
-  font-weight: bold;
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-
-.info2 {
-  color: black;
-  margin-left: 50px;
-  font-size: normal;
-  word-wrap: break-word;
-  line-height: none;
-}
-
+/*BOUTONS*/
 .present_button {
-  border-radius: 45px;
-  margin-left: 45px;
+  width: 220px;
+  height: 50px;
+  border-radius: 30px;
+  border: none;
   background-image: linear-gradient(to left, #ff79DA, #9356DC);
-  font-size: 20px !important;
+  font-size: 1rem !important;
   font-weight: bold;
   color: #fff;
-  padding: 30px 30px;
+  margin-top: 25px;
+  margin-bottom: 35px;
+  margin-right: 65px;
+  margin-left: 65px;
   /*position: relative;
    z-index: 1;*/
   background-size: 200%;
@@ -228,181 +108,12 @@ header p {
   cursor: pointer;
 }
 .present_button:hover {
-  border-radius: 45px;
+  border-radius: 30px;
   background-position: right;
   transform: translate(0, -6px);
 }
 
-/*FONCTIONNEMENT*/
-.fonctionnement h2 {
-  font-size: 1.5rem;
-  margin: 20px;
-  padding-top: 20px;
-}
-
-.fonction_buttons {
-  display: inline-flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding: 0;
-}
-
-.fonction_button {
-  display: inline;
-  margin-left: 50px;
-  font-weight: 500;
-  position: relative;
-  border: none;
-  text-align: center;
-  background-color: #f0eeee;
-  padding: 0 20px 20px 0;
-  margin-top: 25px;
-  border-radius: 25px;
-  cursor: pointer;
-  box-shadow: 0px 0px 6px 0px #0000002E;
-}
-.fonction_button span {
-  background-color: #9356DC;
-  position: absolute;
-  left: -1rem;
-  bottom: 1.6rem;
-  color: white;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 30px;
-  margin-right: 15px;
-  margin-left: 15px;
-  height: 25px;
-  width: 25px;
-  color: grey;
-}
-
-.icon:hover {
-  cursor: pointer;
-  color: #9356DC;
-}
-
-/*RESTAURANTS*/
-.Resto {
-  background-color: #d1cfcf;
-  height: 1000px;
-  /* max-width: 1440px;
-   min-width: 576px;*/
-  width: 375px;
-}
-@media screen and (min-width: 768px) {
-  .Resto {
-    width: 768px;
-    height: 650px;
-  }
-}
-
-.Resto h2 {
-  margin: 20px;
-  padding-top: 20px;
-}
-
-.Restos {
-  /*@media screen and (min-width:600px)*/
-}
-@media screen and (min-width: 576px) {
-  .Restos {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-areas: "resto-1" "resto-2" "resto-3" "resto-4";
-    min-width: 576px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .Restos {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    grid-gap: 5px;
-    grid-template-areas: "resto-1 resto-2" "resto-3 resto-4";
-    min-width: 768px;
-  }
-}
-
-/*  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  grid-template-rows: auto;
-  grid-gap:5px;
-  grid-template-areas: "resto-1 resto-2"
-  "resto-3 resto-4";
-
-  @media screen and (max-width:668px){ 
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, 1fr);
-  grid-template-areas: "resto-1"
-  "resto-2"
-  "resto-3"
-  "resto-4";
-  }  */
-.Resto_figure {
-  position: relative;
-  width: 87%;
-  height: 89%;
-  margin-top: 20px;
-  margin-right: 15px;
-  margin-left: 25px;
-  border-radius: 20px;
-  background-color: white;
-  box-shadow: 1px 1px 17px -9px rgba(0, 0, 0, 0.75);
-}
-
-.Resto_figure img {
-  object-fit: cover;
-  border-radius: 20px 20px 0 0;
-  width: 100%;
-  height: 150px;
-  margin: 0;
-}
-
-.resto_title {
-  padding-left: 10px;
-  padding-top: -10px;
-  padding-bottom: -10px;
-  margin-top: 5px;
-}
-
-.resto_site {
-  margin-top: -10px;
-  padding-left: 10px;
-}
-
-.Resto_figure--description {
-  height: 100%;
-  margin: 0;
-  position: relative;
-}
-.Resto_figure--description span {
-  background-color: #99E2D0;
-  position: absolute;
-  width: 75px;
-  height: 30px;
-  right: 1rem;
-  top: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10%;
-  color: #179b73;
-}
-
-/*Coeur anime*/
+/*COEUR ANIME*/
 .heart_icon {
   fill: transparent;
   stroke: var(--purple);
@@ -482,9 +193,609 @@ path {
     opacity: 0;
   }
 }
+:root {
+  --purple-light:#FF79DA;
+  --purple:#9356DC;
+}
+
+h1 {
+  font-family: "Shrikhand", "cursive";
+  font-weight: bold;
+}
+
+h2, h3, h4, p, li, div, a {
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*$color-primary:#9356DC;/*BTN
+$color-secondary:#ff79DA;/*btn
+$color-tertiary:#99E2D0;*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+  max-width: 100%;
+  margin: auto;
+  /*padding: 0px; */
+}
+
+main {
+  /* max-width: 1440px;
+   min-width: 600px;
+
+   display: flex;
+   flex-direction: column;*/
+}
+@media screen and (min-width: 576px) {
+  main {
+    width: 576px;
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    /* flex-wrap: wrap;*/
+  }
+}
+@media screen and (min-width: 600px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    margin: auto;
+  }
+}
+@media screen and (min-width: 768px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    width: 768px;
+    margin: auto;
+  }
+}
+@media screen and (min-width: 992px) {
+  main {
+    width: 992px;
+    margin: auto;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main {
+    width: 1200px;
+    margin: auto;
+  }
+}
+@media screen and (min-width: 1400px) {
+  main {
+    width: 1440px;
+    margin: auto;
+  }
+}
+
+/*loader spinner
+.load_cup {   
+    height: 140px;
+    width: 200px;
+    border: 6px solid #fff;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 25%;  
+    border-radius: 0px 0px 70px 70px;
+    background: url(/img/coffee.png);
+    box-shadow: 0px 0px 0px 6px #99E2D0;
+    background-repeat: repeat-x;
+    background-position: 0px 140px;
+    animation: fill 3s ease-in-out forwards; 
+  }
+
+
+  @keyframes fill {
+      0% {
+          background-position:  0px 140px;   
+      }
+      20% {
+          background-position: -450px 100px;    
+      }
+      40%{
+          background-position: -900px 50px;
+      }
+      80%{
+          background-position: -1350px -40px;    
+      }
+      100%{
+          background-position: 0px 140px;
+          opacity: 0;
+      }
+  }
+
+  /*.load_handle{
+      height: 70px;
+      width: 40px;
+      z-index: 10001;
+      background-color: transparent;
+      border: 6px solid $color-tertiary;
+      position: absolute;
+      left: 730px;
+      bottom: 320px;
+      border-radius: 0px 25px 80px 0px;   
+  } */
+.cup_of_coffee {
+  z-index: 1;
+  animation: fade-out 6s forwards;
+  /* overflow: hidden;
+   animation: fill 3s ease-in-out infinite;*/
+  animation-delay: 5s;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.accueil {
+  position: relative;
+  animation: fade-in 5s ease-in;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*HEADER*/
+header {
+  text-align: center;
+  position: relative;
+}
+header a {
+  color: black;
+}
+header .fa-arrow-left {
+  cursor: pointer;
+  position: absolute;
+  left: 2rem;
+  top: 0.8rem;
+  font-size: 1.5rem;
+  color: black;
+}
+header .header_logo {
+  font-size: 25px;
+}
+header .localisation {
+  background-color: #dbdbdb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 3px;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  box-shadow: inset 0 2px 4px -3px grey;
+}
+header i {
+  color: grey;
+  padding-right: 15px;
+  padding-left: -15px;
+}
+header p {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: grey;
+  margin-left: -5px;
+}
+
+/*PRESENTATION*/
+.intro {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+}
+.presentation {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  background-color: #f4f4f4;
+  padding-top: 3rem;
+  margin-right: auto;
+  /*padding-bottom: 3rem;*/
+  line-height: 2rem;
+  color: grey;
+}
+.presentation--tablet {
+  display: none;
+}
+.presentation--mobile {
+  display: block;
+}
+
+.info1 {
+  display: flex;
+  justify-content: space-evenly;
+  color: black;
+  font-size: 1.4rem;
+  font-weight: 550;
+}
+
+.info2 {
+  display: flex;
+  justify-content: space-evenly;
+  color: black;
+  text-align: center;
+  font-size: 1.1 rem;
+  margin: 2px;
+  /* word-wrap: break-word;*/
+  line-height: none;
+}
+
+form {
+  margin: auto;
+  text-align: center;
+}
+
+/* .present_button{
+     display:flex;
+     justify-content: space-evenly;
+     border-radius: 45px;
+     margin: 35px;
+     background-image: linear-gradient(to left, $color-secondary, $color-primary);
+     font-size: 20px !important;
+     font-weight: bold;
+     color: #fff;
+     padding: 30px 30px;
+     /*position: relative;
+      z-index: 1;*
+     background-size: 200%;
+     transition: 0.6s;
+     cursor: pointer;    
+     &:hover{
+         border-radius: 45px;
+         background-position: right;
+         transform: translate(0, -6px);
+     }
+ } 
+
+ /*FONCTIONNEMENT*/
+.fonctionnement {
+  margin: auto;
+}
+
+.fonctionnement h2 {
+  font-size: 1.5rem;
+  margin: 20px;
+  padding-top: 20px;
+}
+
+.fonction_buttons {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.fonction_button {
+  display: inline;
+  margin-left: 50px;
+  font-weight: 500;
+  position: relative;
+  border: none;
+  text-align: center;
+  background-color: #f4f4f4;
+  padding: 0 20px 20px 0;
+  margin-top: 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0px 0px 6px 0px #0000002E;
+}
+.fonction_button span {
+  background-color: #9356DC;
+  position: absolute;
+  left: -1rem;
+  bottom: 1.6rem;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  margin-right: 15px;
+  margin-left: 15px;
+  height: 25px;
+  width: 25px;
+  color: #353535;
+}
+
+.icon:hover {
+  cursor: pointer;
+  color: #9356DC;
+}
+
+/*RESTAURANTS*/
+.Resto {
+  background-color: #f4f4f4;
+  height: 1030px;
+  /* max-width: 1440px;
+   min-width: 576px;
+   width: 375px;*/
+}
+@media screen and (min-width: 576px) {
+  .Resto {
+    width: 576px;
+    height: 650px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .Resto {
+    width: 600px;
+    height: 650px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .Resto {
+    width: 768px;
+    height: 650px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .Resto {
+    width: 992px;
+    height: 650px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .Resto {
+    width: 1200px;
+    height: 650px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .Resto {
+    width: 1440px;
+    height: 650px;
+  }
+}
+
+.Resto h2 {
+  margin: 20px;
+  padding-top: 20px;
+}
+
+@media screen and (min-width: 576px) {
+  .Restos {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: "resto-1" "resto-2" "resto-3" "resto-4";
+    width: 576px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .Restos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 5px;
+    grid-template-areas: "resto-1 resto-2" "resto-3 resto-4";
+    width: 600px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .Restos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 5px;
+    grid-template-areas: "resto-1 resto-2" "resto-3 resto-4";
+    min-width: 768px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .Restos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 5px;
+    grid-template-areas: "resto-1 resto-2" "resto-3 resto-4";
+    min-width: 992px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .Restos {
+    width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 5px;
+    grid-template-areas: "resto-1 resto-2" "resto-3 resto-4";
+    min-width: 1200px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .Restos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 5px;
+    grid-template-areas: "resto-1 resto-2" "resto-3 resto-4";
+    min-width: 1440px;
+  }
+}
+
+/*  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: auto;
+  grid-gap:5px;
+  grid-template-areas: "resto-1 resto-2"
+  "resto-3 resto-4";
+
+  @media screen and (max-width:668px){ 
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas: "resto-1"
+  "resto-2"
+  "resto-3"
+  "resto-4";
+  }  */
+.Resto_figure {
+  position: relative;
+  width: 87%;
+  height: 220px;
+  margin-top: 20px;
+  margin-right: 15px;
+  margin-left: 25px;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 1px 1px 17px -9px rgba(0, 0, 0, 0.75);
+}
+
+.Resto_figure img {
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  height: 140px;
+  margin: 0;
+}
+
+.resto_title {
+  padding-left: 10px;
+  padding-top: -10px;
+  padding-bottom: -10px;
+  margin-top: 5px;
+}
+
+.resto_site {
+  margin-top: -10px;
+  padding-left: 10px;
+}
+
+.Resto_figure--description {
+  height: 100%;
+  margin-bottom: 0;
+  position: relative;
+}
+.Resto_figure--description span {
+  background-color: #99E2D0;
+  position: absolute;
+  width: 75px;
+  height: 30px;
+  right: 1rem;
+  top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10%;
+  color: #179b73;
+}
+
+/*Coeur anime*
+.heart_icon {
+    fill: transparent;
+    stroke: var(--purple);
+    stroke-width: 20;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+} 
+
+svg {
+    overflow: visible;
+    width: 30px;
+}
+
+path {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 1550;
+    transform-origin: center;
+}
+
+.heart-background {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    stroke: none;
+}
+
+.heart-main:hover path {
+    animation: stroke-animation 2s ease-in-out forwards;
+}
+
+.heart-main:hover ~ .heart-background path {
+    animation: fade-animation 2s ease-in-out forwards;
+}
+
+@keyframes stroke-animation {
+    0% {
+      stroke-dashoffset: 0;
+    }
+    30% {
+      stroke-dashoffset: 1550;
+    }
+    60% {
+      stroke-dashoffset: 3100;
+      fill: transparent;
+      transform: scale(1);
+    }
+    80% {
+      fill: var(--purple);
+      transform: scale(1.1);
+    }
+    90% {
+      transform: scale(1);
+    }
+    100% {
+      stroke-dashoffset: 3100;
+      fill: var(--purple);
+    }
+  }
+
+@keyframes fade-animation {
+    70% {
+      fill: transparent;
+      transform: scale(1);
+    }
+    80% {
+      fill: var(--purple-light);
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2.5);
+      opacity: 0;
+    }
+}
+
 /*FOOTER*/
 footer {
-  background-color: #313131;
+  background-color: #353535;
   padding-bottom: 30px;
   margin-top: 0px;
   font-size: 1.2rem;
@@ -496,7 +807,6 @@ footer h1 {
   padding-left: 40px;
   margin-bottom: 15px;
   font-family: "Shrikhand";
-  font-style: oblique;
 }
 footer ul {
   list-style: none;
@@ -508,6 +818,7 @@ footer i {
   color: white;
   padding-right: 0.3rem;
   padding-left: 0.3rem;
+  margin-right: 15px;
 }
 footer a {
   color: white;
@@ -518,20 +829,34 @@ footer li {
   font-size: 1rem;
 }
 
-/*MENUS* 
+/*MENUS* ........................................................
 LE DELICE DES SENS*
 
 Header*/
+.header-menu {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.header_logo h1 {
+  margin-top: 20px;
+  font-size: 2rem;
+}
+
 .tag img {
   width: 100%;
   object-fit: cover;
-  height: 550px;
+  height: 250px;
+  position: relative;
 }
 
 .container_menus {
-  background-color: #d1cfcf;
-  height: 100%;
-  border-radius: 20px 20px 0 0;
+  background-color: #f1f1f1;
+  width: 100%;
+  height: 1000px;
+  border-radius: 25px 25px 0 0;
+  position: absolute;
+  margin-top: -30px;
 }
 
 .menus-title {
@@ -539,33 +864,65 @@ Header*/
   font-size: 2.5rem;
 }
 
-/*Animation du coeur*/
-/*.heart_btn{ 
-    cursor: pointer; 
-    &:active{
-        & +.progress{
-            &> .progress_bar{
-                background-color:#9356DC ;
-                transform: scaleX(1);
-            }
-        }
-    }
-
+@media screen and (min-width: 576px) {
+  .menus {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(11, 1fr);
+    grid-template-areas: "section_title1" "section_title2" "section_title3" "entree-1" "plat-4" "dessert-7" "entree-2" "plat-5" "dessert-8" "entree-3" "plat-6" "dessert-9";
+    width: 576px;
+  }
 }
-.progress{
-    &_bar{
-        background-color: #9356DC;
-        transform-origin: 0%;
-        transform: scaleX(0);
-        transition: transform 1000ms cubic-bezier(.32, 0, 0.07, 1);
-    }
-}*/
-.menus {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  grid-template-areas: "section_title1 section_title2 section_title3" "entree-1 plat-4 dessert-7" "entree-2 plat-5 dessert-8" "entree-3 plat-6 dessert-9";
-  gap: 10px;
+@media screen and (min-width: 600px) {
+  .menus {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 5px;
+    grid-template-areas: "section_title1" "section_title2" "section_title3" "entree-1" "plat-4" "dessert-7" "entree-2" "plat-5" "dessert-8" "entree-3" "plat-6" "dessert-9";
+    width: 600px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .menus {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(11, 1fr);
+    grid-gap: 5px;
+    grid-template-areas: "section_title1" "entree-1" "entree-2" "entree-3" "section_title2" "plat-4" "plat-5" "plat-6" "section_title3" "dessert-7" "dessert-8" "dessert-9";
+    min-width: 768px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .menus {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 5px;
+    grid-template-areas: "resto-1 resto-2" "resto-3 resto-4";
+    min-width: 992px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .menus {
+    width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 5px;
+    grid-template-areas: "resto-1 resto-2" "resto-3 resto-4";
+    min-width: 1200px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .menus {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: "section_title1 section_title2 section_title3" "entree-1 plat-4 dessert-7" "entree-2 plat-5 dessert-8" "entree-3 plat-6 dessert-9";
+    gap: 10px;
+    min-width: 1440px;
+  }
 }
 
 .section_title1 {

@@ -1,0 +1,187 @@
+/*loader spinner*/
+.load_cup {      
+    height: 140px;
+    width: 200px;
+    border: 6px solid #fff;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    bottom: 50%;
+    left: 25%;  
+    right: 50%;
+    border-radius: 0px 0px 70px 70px;
+    background: url(/img/coffee.png);
+    box-shadow: 0px 0px 0px 6px #99E2D0;
+    background-repeat: repeat-x;
+    background-position: 0px 140px;
+    animation: fill 3s ease-in-out forwards; 
+  }
+           
+  
+  @keyframes fill {
+      0% {
+          background-position:  0px 140px;   
+      }
+      20% {
+          background-position: -450px 100px;    
+      }
+      40%{
+          background-position: -900px 50px;
+      }
+      80%{
+          background-position: -1350px -40px;    
+      }
+      100%{
+          background-position: 0px 140px;
+          opacity: 0;
+      }
+  }
+  
+  /*.load_handle{
+      height: 70px;
+      width: 40px;
+      z-index: 10001;
+      background-color: transparent;
+      border: 6px solid $color-tertiary;
+      position: absolute;
+      left: 730px;
+      bottom: 320px;
+      border-radius: 0px 25px 80px 0px;   
+  } */
+  
+  .cup_of_coffee{   
+      z-index: 1;
+      animation: fade-out 6s forwards;
+     /* overflow: hidden;
+      animation: fill 3s ease-in-out infinite;*/
+     animation-delay: 5s;
+  }
+
+  @keyframes fade-out{
+    from{
+        opacity:1;
+    }
+    to{
+        opacity:0;
+    }
+}
+
+/*ACCUEIL*/
+  .accueil{
+    position: relative;
+    animation: fade-in 5s ease-in;
+}
+
+@keyframes fade-in{
+    from{  opacity:0; } 
+    
+    to{  opacity:1; }
+}
+
+/*BOUTONS*/
+.present_button{    
+    width: 220px; 
+    height: 50px;
+    border-radius: 30px;
+    border: none;
+    background-image: linear-gradient(to left, $color-secondary, $color-primary);
+    font-size: 1rem !important;
+    font-weight: bold;
+    color: #fff;   
+    margin-top: 25px;
+    margin-bottom: 35px;
+    margin-right: 65px;
+    margin-left: 65px;
+    /*position: relative;
+     z-index: 1;*/
+    background-size: 200%;
+    transition: 0.6s;
+    cursor: pointer;    
+    &:hover{
+        border-radius: 30px;
+        background-position: right;
+        transform: translate(0, -6px);
+    }
+} 
+
+/*COEUR ANIME*/
+.heart_icon {
+    fill: transparent;
+    stroke: var(--purple);
+    stroke-width: 20;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+} 
+
+svg {
+    overflow: visible;
+    width: 30px;
+}
+  
+path {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 1550;
+    transform-origin: center;
+}
+  
+.heart-background {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    stroke: none;
+}
+  
+.heart-main:hover path {
+    animation: stroke-animation 2s ease-in-out forwards;
+}
+  
+.heart-main:hover ~ .heart-background path {
+    animation: fade-animation 2s ease-in-out forwards;
+}
+  
+@keyframes stroke-animation {
+    0% {
+      stroke-dashoffset: 0;
+    }
+    30% {
+      stroke-dashoffset: 1550;
+    }
+    60% {
+      stroke-dashoffset: 3100;
+      fill: transparent;
+      transform: scale(1);
+    }
+    80% {
+      fill: var(--purple);
+      transform: scale(1.1);
+    }
+    90% {
+      transform: scale(1);
+    }
+    100% {
+      stroke-dashoffset: 3100;
+      fill: var(--purple);
+    }
+  }
+  
+@keyframes fade-animation {
+    70% {
+      fill: transparent;
+      transform: scale(1);
+    }
+    80% {
+      fill: var(--purple-light);
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2.5);
+      opacity: 0;
+    }
+}

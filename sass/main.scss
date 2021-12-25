@@ -5,6 +5,7 @@
 
 @import "utils/variables";
 @import "utils/mixins";
+@import "utils/animations";
 
 
 $font-logo-titre:"Shrikhand","cursive";
@@ -35,45 +36,63 @@ $color-tertiary:#99E2D0;*/
 *{
     box-sizing: border-box;
 }
-
 body{
     background: #fff;
-    margin: 0px;  
-    padding: 0px;     
+    max-width: 100%; 
+    margin: auto;  
+    /*padding: 0px; */    
 }
 
 main{
    /* max-width: 1440px;
-    min-width: 600px;*/
+    min-width: 600px;
     
     display: flex;
-    flex-direction: column;
+    flex-direction: column;*/
+
     @include mobile{
         width: 576px;
          display: flex;
+         display: flex;
+        flex-direction: column;
+         margin: auto;
         /* flex-wrap: wrap;*/
     } 
+    @include mobile1{
+        display: flex;
+        flex-direction: column;
+        width: 600px;
+        margin: auto;
+    }
     @include tablet{
+        display: flex;
+        flex-direction: column;
         width: 768px;
         margin: auto;
     }
     @include desktop{
         width: 992px;
+        margin: auto;
     } 
+    @include Xlargedevices{
+        width: 1200px;
+        margin: auto;
+    }
     @include tv{
         width: 1440px;
+        margin: auto;
     }
 }
 
-/*loader spinner*/
-.load_cup {
+/*loader spinner
+.load_cup {   
     height: 140px;
     width: 200px;
     border: 6px solid #fff;
     position: absolute;
-    z-index: 10001;
-    top: 40%;
-    left: 40%;  
+    z-index: 1;
+    top: 50%;
+    left: 25%;  
     border-radius: 0px 0px 70px 70px;
     background: url(/img/coffee.png);
     box-shadow: 0px 0px 0px 6px #99E2D0;
@@ -102,25 +121,44 @@ main{
       }
   }
   
-  .load_handle{
+  /*.load_handle{
       height: 70px;
       width: 40px;
       z-index: 10001;
       background-color: transparent;
       border: 6px solid $color-tertiary;
       position: absolute;
-      left: 755px;
-      bottom: 290px;
+      left: 730px;
+      bottom: 320px;
       border-radius: 0px 25px 80px 0px;   
-  } 
+  } */
   
-  .cup_of_coffee{
-      z-index: 10001;
-      overflow: hidden;
-      animation: fill 3s ease-in-out forwards;
-      animation-delay: 0.1s;
+  .cup_of_coffee{      
+      z-index: 1;
+      animation: fade-out 6s forwards;
+     /* overflow: hidden;
+      animation: fill 3s ease-in-out infinite;*/
+     animation-delay: 5s;
   }
 
+  @keyframes fade-out{
+    from{
+        opacity:1;
+    }
+    to{
+        opacity:0;
+    }
+}
+  .accueil{
+    position: relative;
+    animation: fade-in 5s ease-in;
+}
+
+@keyframes fade-in{
+    from{  opacity:0; } 
+    
+    to{  opacity:1; }
+}
 
 /*HEADER*/
 header{
@@ -138,10 +176,10 @@ header{
            color: black;
        }
 .header_logo{
- font-size: 20px;
+ font-size: 25px;
 }
         & .localisation{
-            background-color: rgb(233, 230, 230);
+            background-color: $color-grey2;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -169,57 +207,77 @@ header{
 
 .intro{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    width: 375px;
-@include tablet{
-    width: 768px;
+    width: 100%;
+    margin: auto;
+        @include mobile{                 
+}
+       @include mobile1{                     
+}
+        @include tablet{                      
+}
+        @include desktop{         
+} 
+        @include Xlargedevices{          
+} 
+        @include tv{         
 }
 }
+
     .presentation{
          display: flex;
-         justify-content: center;
+         justify-content: space-evenly;
          align-items: center;
-         width: 600px;
-         background-color:rgb(172, 167, 167);
+         width: 100%;
+         background-color:$color-grey3;
          padding-top: 3rem;
-         padding-bottom: 3rem;
-         line-height: 3rem;
+         margin-right: auto;
+         /*padding-bottom: 3rem;*/
+         line-height: 2rem;
          color:grey;
         
-         &--tablet{
+        &--tablet{
              display: none;
          }
         &--mobile{
-           display: block;
+             display: block;
         }
     }
     .info1 {
+        display: flex;
+        justify-content: space-evenly;
         color: black;
-       /* text-align: center;*/
-        margin-left: 25px;
-        font-size: 1.3rem;
-        font-weight: bold;
+        font-size: 1.4rem;
+        font-weight: 550;
     }
     
     .info2{
+        display: flex;
+        justify-content: space-evenly;
         color: black;
-        margin-left: 50px;
-        font-size: normal;
-        word-wrap: break-word;
+        text-align: center;   
+        font-size: 1.1 rem;
+        margin: 2px;
+       /* word-wrap: break-word;*/
         line-height: none;
     }
-
-    .present_button{
+    form{
+        margin: auto;
+        text-align: center;
+    }
+   /* .present_button{
+        display:flex;
+        justify-content: space-evenly;
         border-radius: 45px;
-        margin-left: 45px;
+        margin: 35px;
         background-image: linear-gradient(to left, $color-secondary, $color-primary);
         font-size: 20px !important;
         font-weight: bold;
         color: #fff;
         padding: 30px 30px;
         /*position: relative;
-         z-index: 1;*/
+         z-index: 1;*
         background-size: 200%;
         transition: 0.6s;
         cursor: pointer;    
@@ -230,7 +288,11 @@ header{
         }
     } 
 
-    /*FONCTIONNEMENT*/   
+    /*FONCTIONNEMENT*/  
+ .fonctionnement{
+     margin: auto;
+ }   
+    
  .fonctionnement h2{
         font-size: 1.5rem;
         margin: 20px;
@@ -250,7 +312,7 @@ header{
     position: relative;
     border: none;
     text-align: center;
-    background-color: rgb(240, 238, 238);
+    background-color: $color-grey3;
     padding: 0 20px 20px 0;
     margin-top: 25px;
     border-radius: 25px;
@@ -280,7 +342,7 @@ header{
     margin-left: 15px;
     height: 25px;
     width: 25px;
-    color: grey;
+    color: $color-grey;
 }
 .icon:hover{
     cursor: pointer;
@@ -289,13 +351,33 @@ header{
 
 /*RESTAURANTS*/ 
 .Resto{   
-    background-color: rgb(209, 207, 207);
-    height: 1000px;
+    background-color: $color-grey3;
+    height: 1030px;
    /* max-width: 1440px;
-    min-width: 576px;*/
-    width: 375px;
-    @include tablet{
+    min-width: 576px;
+    width: 375px;*/
+@include mobile{
+        width: 576px;
+        height: 650px;
+}
+@include mobile1{
+    width: 600px;
+    height: 650px;
+}
+ @include tablet{
     width: 768px;
+    height: 650px;
+}
+@include desktop{
+    width: 992px;
+    height: 650px;
+}
+@include Xlargedevices{
+    width: 1200px;
+    height: 650px;
+} 
+@include tv{
+    width: 1440px;
     height: 650px;
 }
 }
@@ -305,17 +387,27 @@ header{
 }
 
 .Restos{ 
-    /*@media screen and (min-width:600px)*/@include mobile{ 
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(4, 1fr);
-        grid-template-areas: "resto-1"
+ @include mobile{ 
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: "resto-1"
         "resto-2"
         "resto-3"
         "resto-4"; 
-        min-width: 576px;       
- } 
- @include tablet{
+     width: 576px;       
+}
+
+@include mobile1{   
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: auto;
+        grid-gap:5px;
+        grid-template-areas: "resto-1 resto-2"
+        "resto-3 resto-4";
+        width: 600px;   
+}    
+ @include tablet{   
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: auto;
@@ -324,7 +416,35 @@ header{
     "resto-3 resto-4";
     min-width: 768px;   
  }
+ @include desktop{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto;
+    grid-gap:5px;
+    grid-template-areas: "resto-1 resto-2"
+    "resto-3 resto-4";
+    min-width: 992px;   
+ }
+ @include Xlargedevices{
+    width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto;
+    grid-gap:5px;
+    grid-template-areas: "resto-1 resto-2"
+    "resto-3 resto-4";
+    min-width: 1200px;
 }  
+ @include tv{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto;
+    grid-gap:5px;
+    grid-template-areas: "resto-1 resto-2"
+    "resto-3 resto-4";
+    min-width: 1440px;   
+ }
+} 
   /*  display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: auto;
@@ -346,7 +466,7 @@ header{
 .Resto_figure{
 position: relative;
 width: 87%;
-height: 89%;
+height: 220px;
 margin-top: 20px;
 margin-right: 15px;
 margin-left: 25px;
@@ -359,7 +479,7 @@ box-shadow: 1px 1px 17px -9px rgba(0,0,0,0.75);
 object-fit: cover;
 border-radius: 20px 20px 0 0;
 width: 100%;
-height: 150px;
+height: 140px;
 margin: 0;
 }
 .resto_title{
@@ -375,7 +495,7 @@ margin: 0;
 }
 .Resto_figure--description{
     height: 100%;
-    margin: 0;
+    margin-bottom: 0;
     position: relative;
     & span{
         background-color: $color-tertiary;
@@ -391,7 +511,7 @@ margin: 0;
         color: #179b73;
     }
 }
-/*Coeur anime*/
+/*Coeur anime*
 .heart_icon {
     fill: transparent;
     stroke: var(--purple);
@@ -475,7 +595,7 @@ path {
 
 /*FOOTER*/
 footer{
-    background-color: rgb(49, 49, 49);
+    background-color: $color-grey;
     padding-bottom: 30px;
     margin-top: 0px;
     font-size: 1.2rem;
@@ -486,8 +606,7 @@ footer{
         padding-top: 0;
         padding-left: 40px;
         margin-bottom: 15px;
-        font-family: "Shrikhand";
-        font-style: oblique;     
+        font-family: "Shrikhand";    
     }
     & ul{
         list-style: none;
@@ -497,8 +616,9 @@ footer{
         font-size: 1.2rem;
         width: 1.6rem;
         color: white;
-        padding-right: .3rem;
+        padding-right: 0.3rem;
         padding-left: 0.3rem;
+        margin-right: 15px;
     }
     & a{
         color: white;
@@ -510,59 +630,135 @@ footer{
     }     
 } 
 
-/*MENUS* 
+/*MENUS* ........................................................
 LE DELICE DES SENS*
 
 Header*/
-
+.header-menu{
+    margin-top: 20px;
+    text-align: center;
+}
+.header_logo h1{
+    margin-top: 20px;
+    font-size: 2rem;
+}
 .tag img{
     width: 100%;
     object-fit: cover;
-    height: 550px;
+    height: 250px;
+    position: relative;
 }
 
 .container_menus{
-    background-color: rgb(209, 207, 207);
-    height: 100%;
-    border-radius: 20px 20px 0 0;
+    background-color: #f1f1f1;
+    width: 100%;
+    height: 1000px;
+    border-radius: 25px 25px 0 0;
+    position: absolute;
+    margin-top: -30px;
 }
 .menus-title{
     font-weight: normal;
     font-size: 2.5rem;
 }
 
-/*Animation du coeur*/
-/*.heart_btn{ 
-    cursor: pointer; 
-    &:active{
-        & +.progress{
-            &> .progress_bar{
-                background-color:#9356DC ;
-                transform: scaleX(1);
-            }
-        }
-    }
-
-}
-.progress{
-    &_bar{
-        background-color: #9356DC;
-        transform-origin: 0%;
-        transform: scaleX(0);
-        transition: transform 1000ms cubic-bezier(.32, 0, 0.07, 1);
-    }
-}*/
-
 .menus{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-areas: "section_title1 section_title2 section_title3"
-    "entree-1 plat-4 dessert-7"
-    "entree-2 plat-5 dessert-8"
-    "entree-3 plat-6 dessert-9";
-    gap: 10px;
-}
+    @include mobile{ 
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(11, 1fr);
+        grid-template-areas:
+         "section_title1" 
+         "section_title2"
+         "section_title3"
+         "entree-1"
+         "plat-4" 
+         "dessert-7"
+         "entree-2" 
+         "plat-5" 
+         "dessert-8"
+         "entree-3" 
+         "plat-6"
+         "dessert-9"; 
+         width: 576px;       
+    }
+    
+    @include mobile1{   
+            display: grid;
+            grid-template-columns: repeat(11,1fr);
+            grid-template-rows: auto;
+            grid-gap:5px;
+            grid-template-areas: 
+            "section_title1" 
+            "section_title2"
+            "section_title3"
+            "entree-1"
+            "plat-4" 
+            "dessert-7"
+            "entree-2" 
+            "plat-5" 
+            "dessert-8"
+            "entree-3" 
+            "plat-6"
+            "dessert-9"; ;
+            width: 600px;   
+    }    
+     @include tablet{   
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(11,1fr);
+        grid-gap:5px;
+        grid-template-areas: 
+        "section_title1" 
+        "entree-1"
+        "entree-2" 
+        "entree-3" 
+        "section_title2"
+        "plat-4" 
+        "plat-5"
+        "plat-6"
+        "section_title3"
+        "dessert-7"   
+        "dessert-8"
+        "dessert-9"; ;
+        min-width: 768px;   
+     }
+     @include desktop{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: auto;
+        grid-gap:5px;
+        grid-template-areas: "resto-1 resto-2"
+        "resto-3 resto-4";
+        min-width: 992px;   
+     }
+     @include Xlargedevices{
+        width: 1200px;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: auto;
+        grid-gap:5px;
+        grid-template-areas: "resto-1 resto-2"
+        "resto-3 resto-4";
+        min-width: 1200px;
+    }  
+     @include tv{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: 
+         "section_title1 section_title2 section_title3"
+         "entree-1 plat-4 dessert-7"
+         "entree-2 plat-5 dessert-8"
+         "entree-3 plat-6 dessert-9";
+         gap: 10px;
+        min-width: 1440px;   
+     }
+    } 
+    
+    
+
+
 .section_title1{
     grid-area: section_title1;
 }

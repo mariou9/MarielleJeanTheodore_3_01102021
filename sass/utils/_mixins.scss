@@ -5,17 +5,28 @@
     };
 }
 
+@mixin mobile1{
+  @media screen and (min-width: 600px){
+    @content; 
+  };
+}
+/*Application large devices*/
 @mixin tablet{
     @media screen and (min-width: 768px){
       @content; 
     };
 }
 
-/*Application large and x-large deskstop*/
 @mixin desktop{  
     @media screen and (min-width: 992px){
       @content; 
     };
+}
+/*Application x-large devices*/
+@mixin Xlargedevices{  
+  @media screen and (min-width: 1200px){
+    @content; 
+  };
 }
 @mixin tv{
     @media screen and (min-width: 1400px){

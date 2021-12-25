@@ -20,6 +20,7 @@ crossorigin="anonymous">
         </div>
 
         <!--HEADER-->
+    <div class="accueil">   
     <header class="header">
         <div class="header_logo"> 
             <h1>Ohmyfood!</h1>
@@ -37,7 +38,10 @@ crossorigin="anonymous">
                 <h2 class="info1">Réservez le menu qui vous convient</h2>
                 <p class="info2"> Découvrez des restaurants d'exception,
                     sélectionnés par nos soins</p>
-                <a href="#" class="present_button">Explorer nos restaurants</a>
+                    <form method="post" action="traitement.php">
+                        <input type="button" value="Explorer nos restaurants" class="present_button" />      
+                    </form>    
+                <!--<a href="#" class="present_button">Explorer nos restaurants</a>-->
             </div> 
     </section>
 
@@ -210,6 +214,7 @@ crossorigin="anonymous">
             </div>-->
     </section>
     </main>
+    </div> 
 <!--FOOTER-->
     <footer>
         <h1>ohmyfood!</h1>
@@ -218,7 +223,7 @@ crossorigin="anonymous">
             <li class="foot_news"><i class="fas fa-utensils"></i>Proposer un restaurant</li>
             <li class="foot_news"><i class="fas fa-hands-helping"></i>Devenir partenaire</li>
             <li class="foot_news">Mentions légales</li>
-            <li class="foot_news"><a href="mailto:#"></a> Contact</li>
+            <li class="foot_news"><a href="mailto:contact@ohmyfood.fr"></a> Contact</li>
         </ul>
     </footer>
 </body>

@@ -3,9 +3,11 @@
 $color-primary:#9356DC;/*BTN*/
 $color-secondary:#ff79DA;/*btn*/
 $color-tertiary:#99E2D0;
-
-/*MEDIA QUERIES*/
-
-
+$color-grey: rgb(53,53,53);
+$color-grey2:lighten($color-grey, 65%);
+$color-grey3:lighten($color-grey, 75%);
     
-    
+ /*POLICES*/ 
+   
+$font-logo-titre:"Shrikhand","cursive";
+$font-txt: "Roboto",sans-serif;

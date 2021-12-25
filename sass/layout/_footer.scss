@@ -1,6 +1,6 @@
 
 footer{
-    background-color: rgb(49, 49, 49);
+    background-color: $color-grey;
     padding-bottom: 30px;
     font-size: 1.2rem;
     color: white;
@@ -10,8 +10,7 @@ footer{
         padding-top: 0;
         padding-left: 40px;
         margin-bottom: 15px;
-        font-family: "Shrikhand";
-        font-style: oblique;     
+        font-family: "Shrikhand";    
     }
     & ul{
         list-style: none;
@@ -23,6 +22,7 @@ footer{
         color: white;
         padding-right: .3rem;
         padding-left: 0.3rem;
+        margin-right: 15px;
     }
     & a{
         color: white;
