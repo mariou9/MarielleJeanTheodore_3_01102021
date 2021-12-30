@@ -66,7 +66,7 @@
     }
 }
 
-/*ACCUEIL*/
+/*FONDU ACCUEIL*/
   .accueil{
     position: relative;
     animation: fade-in 5s ease-in;
@@ -79,7 +79,7 @@
 }
 
 /*BOUTONS*/
-.present_button{    
+.present_button{  /*command_button*/  
     width: 220px; 
     height: 50px;
     border-radius: 30px;
@@ -184,4 +184,77 @@ path {
       transform: scale(2.5);
       opacity: 0;
     }
+}
+
+/*EFFET CHECK BOX*/
+
+.resto_item:hover{
+  i{
+      transform: rotate(1turn);
+     transition: all 500ms ease-in-out;
+  }
+}
+.resto_item:hover .check_box{
+  animation: item-appear 700ms forwards;
+  transform: scale(1);
+}
+.resto_item:hover .menus__description--price{
+  transform: translateX(0);
+  font-size: 1.3rem;
+}
+.resto_item:hover .title-subtitle-txt{
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@keyframes item-appear {
+  from{ transform: translate(25px);}
+  to{transform: translate(0);}
+  
+}
+
+/*APPARITION PROGRESSIVE DES MENUS*/
+.menu_list{
+  animation: slide-top 0.5s ease forwards;
+}
+
+@keyframes slide-top {
+  0% {
+            transform: translateY(0);
+  }
+  100% {
+            transform: translateY(-100px);
+  }
+}
+
+#entree-1{
+  animation: slide-top 1500ms 100ms;
+}
+#entree-2{
+  animation: slide-top 1500ms 200ms;
+}
+#entree-3{
+  animation: slide-top 1500ms 300ms;
+}
+#plat-4{
+   animation: slide-top 1500ms 400ms;
+}
+#plat-5{
+   animation: slide-top 1500ms 500ms;
+}
+#plat-6{
+   animation: slide-top 1500ms 600ms;
+}
+#dessert-7{
+   animation: slide-top 1500ms 700ms;
+}
+#dessert-8{
+  animation: slide-top 1500ms 800ms;
+}
+#dessert-9{
+  animation: slide-top 1500ms 900ms;
+}
+#dessert-10{
+   animation: slide-top 1500ms 1000ms;
 }

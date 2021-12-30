@@ -14,6 +14,7 @@ $font-txt: "Roboto",sans-serif;
 :root {
     --purple-light:#FF79DA;
     --purple:#9356DC;
+    
   }
 h1{
     font-family: $font-logo-titre;
@@ -27,6 +28,7 @@ h2,h3, h4, p, li, div, a{
 
 a{
     text-decoration: none;
+    color: black;
 }
 
 /*$color-primary:#9356DC;/*BTN
@@ -266,7 +268,7 @@ header{
         margin: auto;
         text-align: center;
     }
-   /* .present_button{
+ /*  .present_button{
         display:flex;
         justify-content: space-evenly;
         border-radius: 45px;
@@ -286,7 +288,7 @@ header{
             background-position: right;
             transform: translate(0, -6px);
         }
-    } 
+    } */
 
     /*FONCTIONNEMENT*/  
  .fonctionnement{
@@ -445,24 +447,7 @@ header{
     min-width: 1440px;   
  }
 } 
-  /*  display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: auto;
-    grid-gap:5px;
-    grid-template-areas: "resto-1 resto-2"
-    "resto-3 resto-4";
-    
-    @media screen and (max-width:668px){ 
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-areas: "resto-1"
-    "resto-2"
-    "resto-3"
-    "resto-4";
-    }  */
-
-
+  
 .Resto_figure{
 position: relative;
 width: 87%;
@@ -511,7 +496,7 @@ margin: 0;
         color: #179b73;
     }
 }
-/*Coeur anime*
+/*Coeur anime*/
 .heart_icon {
     fill: transparent;
     stroke: var(--purple);
@@ -652,16 +637,123 @@ Header*/
 .container_menus{
     background-color: #f1f1f1;
     width: 100%;
-    height: 1000px;
+    height: 1625px;
     border-radius: 25px 25px 0 0;
     position: absolute;
     margin-top: -30px;
-}
-.menus-title{
-    font-weight: normal;
-    font-size: 2.5rem;
+    margin-right: 0;
+    @include mobile1{
+        width: 600px;
+        height: 1885px;
+    }
+     @include tablet{
+        width: 768px;
+        height: 1860px;
+    }
+    @include desktop{
+        width: 992px;
+        height: 2090px;
+    }
+    @include Xlargedevices{
+        width: 1200px;
+        height: 700px;
+    } 
+    @include tv{
+        width: 1440px;
+        height: 790px;
+    }
 }
 
+
+.menus-title{
+    font-weight: normal;
+    font-size: 1.5rem;   
+    margin: 30px 10px 30px 20px;
+}
+
+/*COEUR ANIME*/
+.heart_icon1 {
+    fill: transparent;
+    stroke: var(--purple);
+    stroke-width: 18;
+    cursor: pointer;
+    position: absolute;
+    right: 1.3rem;
+    top: 1.5rem;
+} 
+
+svg {
+    overflow: visible;
+    width: 30px;
+}
+  
+path {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 1550;
+    transform-origin: center;
+}
+  
+.heart-background {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    stroke: none;
+}
+  
+.heart-main:hover path {
+    animation: stroke-animation 2s ease-in-out forwards;
+}
+  
+.heart-main:hover ~ .heart-background path {
+    animation: fade-animation 2s ease-in-out forwards;
+}
+  
+@keyframes stroke-animation {
+    0% {
+      stroke-dashoffset: 0;
+    }
+    30% {
+      stroke-dashoffset: 1550;
+    }
+    60% {
+      stroke-dashoffset: 3100;
+      fill: transparent;
+      transform: scale(1);
+    }
+    80% {
+      fill: var(--purple);
+      transform: scale(1.1);
+    }
+    90% {
+      transform: scale(1);
+    }
+    100% {
+      stroke-dashoffset: 3100;
+      fill: var(--purple);
+    }
+  }
+  
+@keyframes fade-animation {
+    70% {
+      fill: transparent;
+      transform: scale(1);
+    }
+    80% {
+      fill: var(--purple-light);
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2.5);
+      opacity: 0;
+    }
+}
+
+/*MENUS*/
 .menus{
     @include mobile{ 
         display: grid;
@@ -680,34 +772,34 @@ Header*/
          "entree-3" 
          "plat-6"
          "dessert-9"; 
-         width: 576px;       
+         width: 576px;   
+           
     }
     
     @include mobile1{   
             display: grid;
-            grid-template-columns: repeat(11,1fr);
-            grid-template-rows: auto;
+            grid-template-columns: auto;
+            grid-template-rows:repeat(11,0.8fr) ;
             grid-gap:5px;
             grid-template-areas: 
             "section_title1" 
-            "section_title2"
-            "section_title3"
             "entree-1"
-            "plat-4" 
-            "dessert-7"
             "entree-2" 
-            "plat-5" 
-            "dessert-8"
             "entree-3" 
+            "section_title2"
+            "plat-4" 
+            "plat-5"
             "plat-6"
-            "dessert-9"; ;
-            width: 600px;   
+            "section_title3"
+            "dessert-7"   
+            "dessert-8"
+            "dessert-9";  
+            width: 600px;         
     }    
      @include tablet{   
         display: grid;
         grid-template-columns: auto;
-        grid-template-rows: repeat(11,1fr);
-        grid-gap:5px;
+        grid-template-rows: repeat(11,0.5fr);
         grid-template-areas: 
         "section_title1" 
         "entree-1"
@@ -720,27 +812,41 @@ Header*/
         "section_title3"
         "dessert-7"   
         "dessert-8"
-        "dessert-9"; ;
-        min-width: 768px;   
+        "dessert-9"; 
+        min-width: 768px;  
      }
+
      @include desktop{
         display: grid;
-        grid-template-columns: repeat(2,1fr);
-        grid-template-rows: auto;
-        grid-gap:5px;
-        grid-template-areas: "resto-1 resto-2"
-        "resto-3 resto-4";
-        min-width: 992px;   
+        grid-template-columns: auto;
+        grid-template-rows: repeat(11,0.7fr);
+        
+        grid-template-areas: 
+        "section_title1" 
+        "entree-1"
+        "entree-2" 
+        "entree-3" 
+        "section_title2"
+        "plat-4" 
+        "plat-5"
+        "plat-6"
+        "section_title3"
+        "dessert-7"   
+        "dessert-8"
+        "dessert-9"; 
+        min-width: 992px;     
      }
      @include Xlargedevices{
         width: 1200px;
         display: grid;
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(3,0.7fr);
         grid-template-rows: auto;
-        grid-gap:5px;
-        grid-template-areas: "resto-1 resto-2"
-        "resto-3 resto-4";
-        min-width: 1200px;
+        grid-gap:0px;
+        grid-template-areas: 
+        "section_title1 section_title2 section_title3"
+         "entree-1 plat-4 dessert-7"
+         "entree-2 plat-5 dessert-8"
+         "entree-3 plat-6 dessert-9";
     }  
      @include tv{
         display: grid;
@@ -752,13 +858,11 @@ Header*/
          "entree-2 plat-5 dessert-8"
          "entree-3 plat-6 dessert-9";
          gap: 10px;
-        min-width: 1440px;   
+        min-width: 1440px;
+  
      }
     } 
     
-    
-
-
 .section_title1{
     grid-area: section_title1;
 }
@@ -797,11 +901,12 @@ grid-area: plat-5;
 }
 
 
-/*TITRES*/
+/*TITRES SOULIGNES BARRE VERTE*/
 .section_title1 {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 100;
     position: relative;
+    margin: 15px;   
 }
 .section_title1::before{
     content: "";
@@ -810,11 +915,28 @@ grid-area: plat-5;
     width: 50px;
     height: 7px;
     bottom: 0;
+    margin-bottom: -10px;
+    @include mobile1{
+        margin-bottom: 30px  
+    }
+    @include tablet{
+        margin-bottom: -5px;
+    }
+    @include desktop{
+    margin-bottom: 15px;
+    }
+    @include Xlargedevices{
+    margin-bottom: -12px;
+    }
+    @include tv{
+        margin-bottom: 55px;
+        }
 }
 .section_title2 {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 100;
     position: relative;
+    margin: 15px;
 }
 .section_title2::before{
     content: "";
@@ -823,11 +945,28 @@ grid-area: plat-5;
     width: 50px;
     height: 7px;
     bottom: 0;
+    margin-bottom: -10px;
+    @include mobile1{
+        margin-bottom: 30px  
+    }
+    @include tablet{
+        margin-bottom: -5px;
+    }
+    @include desktop{
+    margin-bottom: 15px;
+    }
+    @include Xlargedevices{
+    margin-bottom: -12px;
+    }
+    @include tv{
+        margin-bottom: 55px;
+        }
 }
 .section_title3 {
-    font-size: 40px;    
+    font-size: 30px;    
     font-weight: 100;
     position: relative;
+    margin: 15px;
 }
 .section_title3::before{
     content: "";
@@ -836,15 +975,156 @@ grid-area: plat-5;
     width: 50px;
     height: 7px;
     bottom: 0;
+    margin-bottom: -10px;
+    @include mobile1{
+        margin-bottom: 30px  
+    }
+    @include tablet{
+        margin-bottom: -5px;
+    }
+    @include desktop{
+    margin-bottom: 15px;
+    }
+    @include Xlargedevices{
+    margin-bottom: -12px;
+    }
+    @include tv{
+    margin-bottom: 55px;
+    }
 }
-.menu_list{
-    position: relative;
-    background-color: white;
+
+/*CHECKBOX*/
+.resto_item{
+    display: flex;
+    align-items: center;
+}
+.resto_item:hover{
+    i{
+        transform: rotate(1turn);
+       transition: all 500ms ease-in-out;
+    }
+}
+.resto_item:hover .check_box{
+    animation: item-appear 700ms forwards;
+    transform: scale(1);
+}
+.resto_item:hover .menus__description--price{
+    transform: translateX(0);
+    font-size: 1.3rem;
+}
+.resto_item:hover .title-subtitle-txt{
     width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    box-shadow: 1px 1px 17px -9px rgba(0,0,0,0.75);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
+@keyframes item-appear {
+    from{ transform: translate(25px);}
+    to{transform: translate(0);}
+    
+}
+.menus_description{
+    width: 93%;
+    border-radius: 20px;
+    height: 105px;
+    border: 0 solid #fff;
+    box-shadow: 1px 3px 3px #d6d6d6;
+    background-color: #fff;
+    margin: 4%;
+    display: flex;
+    justify-content: space-between;
+    margin: 3%;
+    animation: menu-slidein 1500ms 100ms;
+}   
+ .menus_description--price{
+     font-size: 1.1rem;
+     font-weight: 900;
+     margin-right: 15px;
+     margin-top: 68px;
+     transform: translateX(80px);
+     transition: all 500ms;
+ }
+    .menus_description--title {
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+.menus_description--subtitle{
+    margin-top: 10px;
+}
+.title-subtitle-txt{
+    font-size: 1.1rem;
+    margin-left: 3%;
+    width: 80%;
+    overflow: hidden;  
+}
+
+
+.check_box{
+    width: 100px;
+    height: 105px;
+    background-color: $color-tertiary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.3rem;
+    color: #fff;
+    border-radius: 0 20px 20px 0;
+    transform: scale(0);
+    transition: all 500ms 200ms ease-in;
+}
+
+/*APPARITION DES MENUS*/
+  
+.menu_list{
+    animation: slide-top 0.5s ease forwards;
+}
+
+@keyframes slide-top {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(-100px);
+              transform: translateY(-100px);
+    }
+  }
+#entree-1{
+    animation: slide-top 1500ms 100ms;
+}
+#entree-2{
+    animation: slide-top 1500ms 200ms;
+}
+#entree-3{
+    animation: slide-top 1500ms 300ms;
+}
+#plat-4{
+     animation: slide-top 1500ms 400ms;
+}
+#plat-5{
+     animation: slide-top 1500ms 500ms;
+}
+#plat-6{
+     animation: slide-top 1500ms 600ms;
+}
+#dessert-7{
+     animation: slide-top 1500ms 700ms;
+}
+#dessert-8{
+    animation: slide-top 1500ms 800ms;
+}
+#dessert-9{
+    animation: slide-top 1500ms 900ms;
+}
+#dessert-10{
+     animation: slide-top 1500ms 1000ms;
+}
+
 /*BTN COMMANDER*/
 .command{
     display: flex;
@@ -852,7 +1132,30 @@ grid-area: plat-5;
     align-items: center;
 }
 .command_button{
-    border-radius: 45px;
+    width: 220px; 
+    height: 50px;
+    border-radius: 30px;
+    border: none;
+    background-image: linear-gradient(to left, $color-secondary, $color-primary);
+    font-size: 1rem !important;
+    font-weight: bold;
+    color: #fff;   
+    margin-top: 35px;
+    margin-bottom: 20px;
+    margin-right: 65px;
+    margin-left: 65px;
+    /*position: relative;
+     z-index: 1;*/
+    background-size: 200%;
+    transition: 0.6s;
+    cursor: pointer;    
+    &:hover{
+        border-radius: 30px;
+        background-position: right;
+        transform: translate(0, -6px);
+    }
+} 
+  /*  border-radius: 45px;
     background-image: linear-gradient(to left, $color-secondary, $color-primary);
     font-size: 20px !important;
     text-transform: uppercase;
@@ -862,7 +1165,7 @@ grid-area: plat-5;
     background-size: 200%;
     transition: 0.6s;
    /* position: relative;
-    z-index: 1;*/
+    z-index: 1;*
     cursor: pointer;    
     &:hover{
         border-radius: 45px;
@@ -893,8 +1196,75 @@ grid-area: plat-5;
    transition: opacity .250ms;
   }
 }*/
-.command_button{
+
+form{
+    margin: auto;
+    text-align: center;
+}
+/*.command_button{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/*FOOTER*/
+.menu_footer{
+    background-color: $color-grey;
+    padding-bottom: 30px;
+    font-size: 1rem;
+    color: white;
+    height: auto;
+    margin-top: 1600px;
+    
+    
+    & h1{
+        margin-top: 0;
+        padding-top: 20px;
+        padding-left: 40px;
+        margin-bottom: 15px;
+        font-family: "Shrikhand";    
+    }
+    & ul{
+        list-style: none;
+        line-height: 1rem;   
+    }
+    & i{
+        font-size: 1.2rem;
+        width: 1.6rem;
+        color: white;
+        padding-right: .3rem;
+        padding-left: 0.3rem;
+        margin-right: 15px;
+    }
+    & a{
+        color: white;
+        font-style: normal;
+    } 
+    & li{
+        margin-bottom: 15px;
+        font-size: 1rem;
+    } 
+    @include mobile{
+        margin-top: 1500px;
+    } 
+    @include mobile1{
+        margin-top: 1860px;
+        
+    }
+     @include tablet{
+        margin-top: 1830px;
+        
+    }
+    @include desktop{
+        margin-top: 2065px;
+        
+    }
+    @include Xlargedevices{
+        margin-top: 670px;
+      
+    } 
+    @include tv{
+        margin-top: 760px;
+        
+    }
 }
