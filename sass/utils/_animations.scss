@@ -155,7 +155,7 @@ path {
       transform: scale(1);
     }
     80% {
-      fill: var(--purple);
+      fill: var (--purple);
       transform: scale(1.1);
     }
     90% {
@@ -216,45 +216,58 @@ path {
 
 /*APPARITION PROGRESSIVE DES MENUS*/
 .menu_list{
-  animation: slide-top 0.5s ease forwards;
+  animation: slide-in-bottom 3s ease-in-out forwards;
 }
 
-@keyframes slide-top {
+@keyframes slide-in-bottom {
+  
   0% {
-            transform: translateY(0);
+            transform: translateY(1000px);
+    opacity: 0;
   }
   100% {
-            transform: translateY(-100px);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-bottom {
+  0% {
+            transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+            transform: translateY(0);
+    opacity: 1;
   }
 }
 
 #entree-1{
-  animation: slide-top 1500ms 100ms;
+  animation: slide-in-bottom 1500ms 100ms;
 }
 #entree-2{
-  animation: slide-top 1500ms 200ms;
+  animation: slide-in-bottom 1500ms 200ms;
 }
 #entree-3{
-  animation: slide-top 1500ms 300ms;
+  animation: slide-in-bottom 1500ms 300ms;
 }
 #plat-4{
-   animation: slide-top 1500ms 400ms;
+   animation: slide-in-bottom 1500ms 400ms;
 }
 #plat-5{
-   animation: slide-top 1500ms 500ms;
+   animation: slide-in-bottom 1500ms 500ms;
 }
 #plat-6{
-   animation: slide-top 1500ms 600ms;
+   animation: slide-in-bottom 1500ms 600ms;
 }
 #dessert-7{
-   animation: slide-top 1500ms 700ms;
+   animation: slide-in-bottom 1500ms 700ms;
 }
 #dessert-8{
-  animation: slide-top 1500ms 800ms;
+  animation: slide-in-bottom 1500ms 800ms;
 }
 #dessert-9{
-  animation: slide-top 1500ms 900ms;
+  animation: slide-in-bottom 1500ms 900ms;
 }
 #dessert-10{
-   animation: slide-top 1500ms 1000ms;
+   animation: slide-in-bottom 1500ms 1000ms;
 }
