@@ -41,16 +41,10 @@ $color-tertiary:#99E2D0;*/
 body{
     background: #fff;
     max-width: 100%; 
-    margin: auto;  
-    /*padding: 0px; */    
+    margin: auto;      
 }
 
 main{
-   /* max-width: 1440px;
-    min-width: 600px;
-    
-    display: flex;
-    flex-direction: column;*/
 
     @include mobile{
         width: 576px;
@@ -58,7 +52,6 @@ main{
          display: flex;
         flex-direction: column;
          margin: auto;
-        /* flex-wrap: wrap;*/
     } 
     @include mobile1{
         display: flex;
@@ -235,7 +228,6 @@ header{
          background-color:$color-grey3;
          padding-top: 3rem;
          margin-right: auto;
-         /*padding-bottom: 3rem;*/
          line-height: 2rem;
          color:grey;
         
@@ -355,9 +347,7 @@ header{
 .Resto{   
     background-color: $color-grey3;
     height: 1030px;
-   /* max-width: 1440px;
-    min-width: 576px;
-    width: 375px;*/
+   
 @include mobile{
         width: 576px;
         height: 650px;
@@ -1142,10 +1132,6 @@ grid-area: plat-5;
     color: #fff;   
     margin-top: 35px;
     margin-bottom: 20px;
-  /*  margin-right: 65px;
-    margin-left: 65px;
-    /*position: relative;
-     z-index: 1;*/
     background-size: 200%;
     transition: 0.6s;
     cursor: pointer;    
