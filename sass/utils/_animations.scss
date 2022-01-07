@@ -107,7 +107,7 @@
 /*COEUR ANIME*/
 .heart_icon {
     fill: transparent;
-    stroke: var(--purple);
+    stroke: /*var(--purple)*/  linear-gradient(to right, #ff79DA, #9356DC);
     stroke-width: 20;
     cursor: pointer;
     position: absolute;
@@ -117,7 +117,7 @@
 
 svg {
     overflow: visible;
-    width: 30px;
+    width: 30px;  
 }
   
 path {
@@ -155,7 +155,8 @@ path {
       transform: scale(1);
     }
     80% {
-      fill: var (--purple);
+      fill: linear-gradient(to right, #ff79DA, #9356DC);
+      
       transform: scale(1.1);
     }
     90% {
@@ -163,7 +164,7 @@ path {
     }
     100% {
       stroke-dashoffset: 3100;
-      fill: var(--purple);
+      fill: /*var(--purple)*/linear-gradient(to right, #ff79DA, #9356DC);
     }
   }
   

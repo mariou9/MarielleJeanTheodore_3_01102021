@@ -6,6 +6,7 @@
 @import "utils/variables";
 @import "utils/mixins";
 @import "utils/animations";
+@import "components/buttons";
 
 
 $font-logo-titre:"Shrikhand","cursive";
@@ -13,9 +14,10 @@ $font-txt: "Roboto",sans-serif;
 
 :root {
     --purple-light:#FF79DA;
-    --purple:#9356DC;
-    
-  }
+    --purple: #9356DC;
+
+}   
+  
 h1{
     font-family: $font-logo-titre;
     font-weight: bold;
