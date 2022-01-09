@@ -105,9 +105,36 @@
 } 
 
 /*COEUR ANIME*/
-.heart_icon {
+
+.animate_heart{
+  width: 30px;
+  stroke-width: 30;
+  stroke:$color-primary;
+  fill: white;
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+}
+
+.animate_heart .heart-full {
+  position: absolute;
+  fill: url(#text-fill);
+  stroke: none;
+}
+
+.animate_heart .heart-empty {
+  position: relative;
+}
+
+.animate_heart .heart-empty:hover {
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+/*.heart_icon {
     fill: transparent;
-    stroke: /*var(--purple)*/  linear-gradient(to right, #ff79DA, #9356DC);
+    stroke: /*var(--purple)*  linear-gradient(to right, #ff79DA, #9356DC);
     stroke-width: 20;
     cursor: pointer;
     position: absolute;
@@ -164,7 +191,7 @@ path {
     }
     100% {
       stroke-dashoffset: 3100;
-      fill: /*var(--purple)*/linear-gradient(to right, #ff79DA, #9356DC);
+      fill: /*var(--purple)*linear-gradient(to right, #ff79DA, #9356DC);
     }
   }
   
@@ -189,18 +216,18 @@ path {
 
 /*EFFET CHECK BOX*/
 
-.resto_item:hover{
-  i{
-      transform: rotate(1turn);
-     transition: all 500ms ease-in-out;
+.resto_item:hover .check_box i {
+    transform: rotate(1turn);
+     transition: all 500ms both;
   }
-}
+  
 .resto_item:hover .check_box{
-  animation: item-appear 700ms forwards;
-  transform: scale(1);
-}
-.resto_item:hover .menus__description--price{
+ animation: item-appear 700ms forwards;
+  transform: scale(1);}
+
+.resto_item:hover .menus__description--price {
   transform: translateX(0);
+  transition: 0.5s ease;
   font-size: 1.3rem;
 }
 .resto_item:hover .title-subtitle-txt{
@@ -209,21 +236,22 @@ path {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 @keyframes item-appear {
   from{ transform: translate(25px);}
   to{transform: translate(0);}
-  
-}
+}  
 
 /*APPARITION PROGRESSIVE DES MENUS*/
 .menu_list{
-  animation: slide-in-bottom 3s ease-in-out forwards;
+  animation: slide-in-bottom 5s ease-in-out forwards;
+  animation: opacity 1s both;
 }
 
 @keyframes slide-in-bottom {
   
   0% {
-            transform: translateY(1000px);
+            transform: translateY(25px);
     opacity: 0;
   }
   100% {
@@ -233,7 +261,7 @@ path {
 }
 @keyframes slide-in-bottom {
   0% {
-            transform: translateY(1000px);
+            transform: translateY(25px);
     opacity: 0;
   }
   100% {
@@ -242,33 +270,52 @@ path {
   }
 }
 
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 #entree-1{
   animation: slide-in-bottom 1500ms 100ms;
+  opacity: 0.1 s;
 }
 #entree-2{
   animation: slide-in-bottom 1500ms 200ms;
+  opacity: 0.2 s;
+
 }
 #entree-3{
   animation: slide-in-bottom 1500ms 300ms;
+  opacity: 0.3 s;
 }
 #plat-4{
    animation: slide-in-bottom 1500ms 400ms;
+   opacity: 0.4 s;
 }
 #plat-5{
    animation: slide-in-bottom 1500ms 500ms;
+   opacity: 0.5 s;
 }
 #plat-6{
    animation: slide-in-bottom 1500ms 600ms;
+   opacity: 0.6 s;
 }
 #dessert-7{
    animation: slide-in-bottom 1500ms 700ms;
+   opacity: 0.7 s;
 }
 #dessert-8{
   animation: slide-in-bottom 1500ms 800ms;
+  opacity: 0.8 s;
 }
 #dessert-9{
   animation: slide-in-bottom 1500ms 900ms;
+  opacity: 0.9s;
 }
 #dessert-10{
    animation: slide-in-bottom 1500ms 1000ms;
+   opacity: 1 s;
 }

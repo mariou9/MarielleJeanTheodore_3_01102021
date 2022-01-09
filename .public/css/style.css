@@ -115,89 +115,119 @@
 }
 
 /*COEUR ANIME*/
-.heart_icon {
-  fill: transparent;
-  stroke: linear-gradient(to right, #ff79DA, #9356DC);
-  stroke-width: 20;
+.animate_heart {
+  width: 30px;
+  stroke-width: 30;
+  stroke: #9356DC;
+  fill: white;
   cursor: pointer;
   position: absolute;
   right: 1rem;
   bottom: 1rem;
 }
 
-svg {
-  overflow: visible;
-  width: 30px;
-}
-
-path {
-  stroke-dashoffset: 0;
-  stroke-dasharray: 1550;
-  transform-origin: center;
-}
-
-.heart-background {
+.animate_heart .heart-full {
   position: absolute;
-  left: 0;
-  right: 0;
-  z-index: -1;
+  fill: url(#text-fill);
   stroke: none;
 }
 
+.animate_heart .heart-empty {
+  position: relative;
+}
+
+.animate_heart .heart-empty:hover {
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+/*.heart_icon {
+    fill: transparent;
+    stroke: /*var(--purple)*  linear-gradient(to right, #ff79DA, #9356DC);
+    stroke-width: 20;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+} 
+
+svg {
+    overflow: visible;
+    width: 30px;  
+}
+
+path {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 1550;
+    transform-origin: center;
+}
+
+.heart-background {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    stroke: none;
+}
+
 .heart-main:hover path {
-  animation: stroke-animation 2s ease-in-out forwards;
+    animation: stroke-animation 2s ease-in-out forwards;
 }
 
 .heart-main:hover ~ .heart-background path {
-  animation: fade-animation 2s ease-in-out forwards;
+    animation: fade-animation 2s ease-in-out forwards;
 }
 
 @keyframes stroke-animation {
-  0% {
-    stroke-dashoffset: 0;
+    0% {
+      stroke-dashoffset: 0;
+    }
+    30% {
+      stroke-dashoffset: 1550;
+    }
+    60% {
+      stroke-dashoffset: 3100;
+      fill: transparent;
+      transform: scale(1);
+    }
+    80% {
+      fill: linear-gradient(to right, #ff79DA, #9356DC);
+
+      transform: scale(1.1);
+    }
+    90% {
+      transform: scale(1);
+    }
+    100% {
+      stroke-dashoffset: 3100;
+      fill: /*var(--purple)*linear-gradient(to right, #ff79DA, #9356DC);
+    }
   }
-  30% {
-    stroke-dashoffset: 1550;
-  }
-  60% {
-    stroke-dashoffset: 3100;
-    fill: transparent;
-    transform: scale(1);
-  }
-  80% {
-    fill: linear-gradient(to right, #ff79DA, #9356DC);
-    transform: scale(1.1);
-  }
-  90% {
-    transform: scale(1);
-  }
-  100% {
-    stroke-dashoffset: 3100;
-    fill: linear-gradient(to right, #ff79DA, #9356DC);
-  }
-}
+
 @keyframes fade-animation {
-  70% {
-    fill: transparent;
-    transform: scale(1);
-  }
-  80% {
-    fill: var(--purple-light);
-    transform: scale(1.1);
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: scale(2.5);
-    opacity: 0;
-  }
+    70% {
+      fill: transparent;
+      transform: scale(1);
+    }
+    80% {
+      fill: var(--purple-light);
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2.5);
+      opacity: 0;
+    }
 }
+
 /*EFFET CHECK BOX*/
-.resto_item:hover i {
+.resto_item:hover .check_box i {
   transform: rotate(1turn);
-  transition: all 500ms ease-in-out;
+  transition: all 500ms both;
 }
 
 .resto_item:hover .check_box {
@@ -207,6 +237,7 @@ path {
 
 .resto_item:hover .menus__description--price {
   transform: translateX(0);
+  transition: 0.5s ease;
   font-size: 1.3rem;
 }
 
@@ -227,12 +258,13 @@ path {
 }
 /*APPARITION PROGRESSIVE DES MENUS*/
 .menu_list {
-  animation: slide-in-bottom 3s ease-in-out forwards;
+  animation: slide-in-bottom 5s ease-in-out forwards;
+  animation: opacity 1s both;
 }
 
 @keyframes slide-in-bottom {
   0% {
-    transform: translateY(1000px);
+    transform: translateY(25px);
     opacity: 0;
   }
   100% {
@@ -242,52 +274,70 @@ path {
 }
 @keyframes slide-in-bottom {
   0% {
-    transform: translateY(1000px);
+    transform: translateY(25px);
     opacity: 0;
   }
   100% {
     transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
     opacity: 1;
   }
 }
 #entree-1 {
   animation: slide-in-bottom 1500ms 100ms;
+  opacity: 0.1 s;
 }
 
 #entree-2 {
   animation: slide-in-bottom 1500ms 200ms;
+  opacity: 0.2 s;
 }
 
 #entree-3 {
   animation: slide-in-bottom 1500ms 300ms;
+  opacity: 0.3 s;
 }
 
 #plat-4 {
   animation: slide-in-bottom 1500ms 400ms;
+  opacity: 0.4 s;
 }
 
 #plat-5 {
   animation: slide-in-bottom 1500ms 500ms;
+  opacity: 0.5 s;
 }
 
 #plat-6 {
   animation: slide-in-bottom 1500ms 600ms;
+  opacity: 0.6 s;
 }
 
 #dessert-7 {
   animation: slide-in-bottom 1500ms 700ms;
+  opacity: 0.7 s;
 }
 
 #dessert-8 {
   animation: slide-in-bottom 1500ms 800ms;
+  opacity: 0.8 s;
 }
 
 #dessert-9 {
   animation: slide-in-bottom 1500ms 900ms;
+  opacity: 0.9s;
 }
 
 #dessert-10 {
   animation: slide-in-bottom 1500ms 1000ms;
+  opacity: 1 s;
 }
 
 /*BOUTONS*/
@@ -317,11 +367,11 @@ path {
   transform: translate(0, -6px);
 }
 
-:root {
-  --purple-light:#FF79DA;
-  --purple: #9356DC;
-}
+/*:root {
+    --purple-light:#FF79DA;
+    --purple: #9356DC;
 
+}  */
 h1 {
   font-family: "Shrikhand", "cursive";
   font-weight: bold;
@@ -394,7 +444,7 @@ body {
   }
 }
 
-/*loader spinner
+/*loader spinner reste en comment!
 .load_cup {   
     height: 140px;
     width: 200px;
@@ -431,7 +481,7 @@ body {
       }
   }
 
-  /*.load_handle{
+  /*.load_handle{reste en comment
       height: 70px;
       width: 40px;
       z-index: 10001;
@@ -542,9 +592,10 @@ header p {
 .info1 {
   display: flex;
   justify-content: space-evenly;
+  text-align: center;
   color: black;
-  font-size: 1.4rem;
-  font-weight: 550;
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 
 .info2 {
@@ -563,7 +614,7 @@ form {
   text-align: center;
 }
 
-/*  .present_button{
+/*  .present_button{reste en commentaire)
        display:flex;
        justify-content: space-evenly;
        border-radius: 45px;
@@ -583,8 +634,9 @@ form {
            background-position: right;
            transform: translate(0, -6px);
        }
-   } */
-/*FONCTIONNEMENT*/
+   } 
+
+   /*FONCTIONNEMENT*/
 .fonctionnement {
   margin: auto;
 }
@@ -807,85 +859,87 @@ form {
 }
 
 /*Coeur anime*/
-.heart_icon {
-  fill: transparent;
-  stroke: var(--purple);
-  stroke-width: 20;
-  cursor: pointer;
-  position: absolute;
-  right: 1rem;
-  bottom: 1rem;
-}
+/*.heart_icon {
+    fill: transparent;
+    stroke: var(--purple);
+    stroke-width: 20;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+} 
 
 svg {
-  overflow: visible;
-  width: 30px;
+    overflow: visible;
+    width: 30px;
 }
 
 path {
-  stroke-dashoffset: 0;
-  stroke-dasharray: 1550;
-  transform-origin: center;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 1550;
+    transform-origin: center;
 }
 
 .heart-background {
-  position: absolute;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  stroke: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    stroke: none;
 }
 
 .heart-main:hover path {
-  animation: stroke-animation 2s ease-in-out forwards;
+    animation: stroke-animation 2s ease-in-out forwards;
 }
 
 .heart-main:hover ~ .heart-background path {
-  animation: fade-animation 2s ease-in-out forwards;
+    animation: fade-animation 2s ease-in-out forwards;
 }
 
 @keyframes stroke-animation {
-  0% {
-    stroke-dashoffset: 0;
+    0% {
+      stroke-dashoffset: 0;
+    }
+    30% {
+      stroke-dashoffset: 1550;
+    }
+    60% {
+      stroke-dashoffset: 3100;
+      fill: transparent;
+      transform: scale(1);
+    }
+    80% {
+      fill: var(--purple);
+      transform: scale(1.1);
+    }
+    90% {
+      transform: scale(1);
+    }
+    100% {
+      stroke-dashoffset: 3100;
+      fill: var(--purple);
+    }
   }
-  30% {
-    stroke-dashoffset: 1550;
-  }
-  60% {
-    stroke-dashoffset: 3100;
-    fill: transparent;
-    transform: scale(1);
-  }
-  80% {
-    fill: var(--purple);
-    transform: scale(1.1);
-  }
-  90% {
-    transform: scale(1);
-  }
-  100% {
-    stroke-dashoffset: 3100;
-    fill: var(--purple);
-  }
-}
+
 @keyframes fade-animation {
-  70% {
-    fill: transparent;
-    transform: scale(1);
-  }
-  80% {
-    fill: var(--purple-light);
-    transform: scale(1.1);
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: scale(2.5);
-    opacity: 0;
-  }
+    70% {
+      fill: transparent;
+      transform: scale(1);
+    }
+    80% {
+      fill: var(--purple-light);
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2.5);
+      opacity: 0;
+    }
 }
+
 /*FOOTER*/
 footer {
   background-color: #353535;
@@ -924,8 +978,7 @@ footer li {
 
 /*MENUS* ........................................................
 LE DELICE DES SENS*
-
-Header*/
+/*Header*/
 .header-menu {
   margin-top: 20px;
   text-align: center;
@@ -991,84 +1044,113 @@ Header*/
 
 /*COEUR ANIME*/
 .heart_icon1 {
-  fill: transparent;
-  stroke: var(--purple);
-  stroke-width: 18;
+  width: 30px;
+  stroke-width: 30;
+  stroke: #9356DC;
+  fill: white;
   cursor: pointer;
   position: absolute;
   right: 1.3rem;
   top: 1.5rem;
 }
 
-svg {
-  overflow: visible;
-  width: 30px;
-}
-
-path {
-  stroke-dashoffset: 0;
-  stroke-dasharray: 1550;
-  transform-origin: center;
-}
-
-.heart-background {
+.heart_icon1 .heart-full {
   position: absolute;
-  left: 0;
-  right: 0;
-  z-index: -1;
+  fill: url(#text-fill);
   stroke: none;
 }
 
+.heart_icon1 .heart-empty {
+  position: relative;
+}
+
+.heart_icon1 .heart-empty:hover {
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+/*.heart_icon1 {
+    fill: transparent;
+    stroke: var(--purple);
+    stroke-width: 18;
+    cursor: pointer;
+    position: absolute;
+    right: 1.3rem;
+    top: 1.5rem;
+} 
+
+svg {
+    overflow: visible;
+    width: 30px;
+}
+
+path {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 1550;
+    transform-origin: center;
+}
+
+.heart-background {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    stroke: none;
+}
+
 .heart-main:hover path {
-  animation: stroke-animation 2s ease-in-out forwards;
+    animation: stroke-animation 2s ease-in-out forwards;
 }
 
 .heart-main:hover ~ .heart-background path {
-  animation: fade-animation 2s ease-in-out forwards;
+    animation: fade-animation 2s ease-in-out forwards;
 }
 
 @keyframes stroke-animation {
-  0% {
-    stroke-dashoffset: 0;
+    0% {
+      stroke-dashoffset: 0;
+    }
+    30% {
+      stroke-dashoffset: 1550;
+    }
+    60% {
+      stroke-dashoffset: 3100;
+      fill: transparent;
+      transform: scale(1);
+    }
+    80% {
+      fill: var(--purple);
+      transform: scale(1.1);
+    }
+    90% {
+      transform: scale(1);
+    }
+    100% {
+      stroke-dashoffset: 3100;
+      fill: var(--purple);
+    }
   }
-  30% {
-    stroke-dashoffset: 1550;
-  }
-  60% {
-    stroke-dashoffset: 3100;
-    fill: transparent;
-    transform: scale(1);
-  }
-  80% {
-    fill: var(--purple);
-    transform: scale(1.1);
-  }
-  90% {
-    transform: scale(1);
-  }
-  100% {
-    stroke-dashoffset: 3100;
-    fill: var(--purple);
-  }
-}
+
 @keyframes fade-animation {
-  70% {
-    fill: transparent;
-    transform: scale(1);
-  }
-  80% {
-    fill: var(--purple-light);
-    transform: scale(1.1);
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: scale(2.5);
-    opacity: 0;
-  }
+    70% {
+      fill: transparent;
+      transform: scale(1);
+    }
+    80% {
+      fill: var(--purple-light);
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2.5);
+      opacity: 0;
+    }
 }
+
 /*MENUS*/
 @media screen and (min-width: 576px) {
   .menus {
@@ -1306,21 +1388,24 @@ path {
 /*CHECKBOX*/
 .resto_item {
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
-.resto_item:hover i {
+.resto_item:hover .check_box i {
   transform: rotate(1turn);
   transition: all 500ms ease-in-out;
 }
 
 .resto_item:hover .check_box {
+  transform-origin: right;
   animation: item-appear 700ms forwards;
   transform: scale(1);
 }
 
 .resto_item:hover .menus__description--price {
   transform: translateX(0);
+  transition: 0.5s ease;
   font-size: 1.3rem;
 }
 
@@ -1350,7 +1435,7 @@ path {
   display: flex;
   justify-content: space-between;
   margin: 3%;
-  animation: menu-slidein 1500ms 100ms;
+  animation: slide-in-bottom 1500ms 100ms;
 }
 
 .menus_description--price {
@@ -1374,6 +1459,10 @@ path {
 
 .menus_description--subtitle {
   margin-top: 10px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .title-subtitle-txt {
@@ -1399,61 +1488,61 @@ path {
 
 /*APPARITION DES MENUS*/
 .menu_list {
-  animation: slide-top 0.5s ease forwards;
+  animation: slide-in-bottom 0.5s ease forwards;
 }
 
-@keyframes slide-top {
-  0% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  100% {
-    -webkit-transform: translateY(-100px);
-    transform: translateY(-100px);
-  }
-}
+/*@keyframes slide-top{
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(-100px);
+              transform: translateY(-100px);
+    }
+  }*/
 #entree-1 {
-  animation: slide-top 1500ms 100ms;
+  animation: slide-in-bottom 1500ms 100ms;
 }
 
 #entree-2 {
-  animation: slide-top 1500ms 200ms;
+  animation: slide-in-bottom 1500ms 200ms;
 }
 
 #entree-3 {
-  animation: slide-top 1500ms 300ms;
+  animation: slide-in-bottom 1500ms 300ms;
 }
 
 #plat-4 {
-  animation: slide-top 1500ms 400ms;
+  animation: slide-in-bottom 1500ms 400ms;
 }
 
 #plat-5 {
-  animation: slide-top 1500ms 500ms;
+  animation: slide-in-bottom 1500ms 500ms;
 }
 
 #plat-6 {
-  animation: slide-top 1500ms 600ms;
+  animation: slide-in-bottom 1500ms 600ms;
 }
 
 #dessert-7 {
-  animation: slide-top 1500ms 700ms;
+  animation: slide-in-bottom 1500ms 700ms;
 }
 
 #dessert-8 {
-  animation: slide-top 1500ms 800ms;
+  animation: slide-in-bottom 1500ms 800ms;
 }
 
 #dessert-9 {
-  animation: slide-top 1500ms 900ms;
+  animation: slide-in-bottom 1500ms 900ms;
 }
 
 #dessert-10 {
-  animation: slide-top 1500ms 1000ms;
+  animation: slide-in-bottom 1500ms 1000ms;
 }
 
 /*BTN COMMANDER*/
-/*.command{
+/*.command{RC
     display: flex;
     justify-content: center;
     align-items: center;

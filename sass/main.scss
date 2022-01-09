@@ -12,11 +12,11 @@
 $font-logo-titre:"Shrikhand","cursive";
 $font-txt: "Roboto",sans-serif;
 
-:root {
+/*:root {
     --purple-light:#FF79DA;
     --purple: #9356DC;
 
-}   
+}  */ 
   
 h1{
     font-family: $font-logo-titre;
@@ -81,7 +81,7 @@ main{
     }
 }
 
-/*loader spinner
+/*loader spinner reste en comment!
 .load_cup {   
     height: 140px;
     width: 200px;
@@ -118,7 +118,7 @@ main{
       }
   }
   
-  /*.load_handle{
+  /*.load_handle{reste en comment
       height: 70px;
       width: 40px;
       z-index: 10001;
@@ -208,7 +208,7 @@ header{
     align-items: center;
     width: 100%;
     margin: auto;
-        @include mobile{                 
+       @include mobile{                 
 }
        @include mobile1{                     
 }
@@ -243,9 +243,10 @@ header{
     .info1 {
         display: flex;
         justify-content: space-evenly;
+        text-align: center;
         color: black;
-        font-size: 1.4rem;
-        font-weight: 550;
+        font-size: 1.6rem;
+        font-weight: 600;
     }
     
     .info2{
@@ -262,7 +263,7 @@ header{
         margin: auto;
         text-align: center;
     }
- /*  .present_button{
+ /*  .present_button{reste en commentaire)
         display:flex;
         justify-content: space-evenly;
         border-radius: 45px;
@@ -282,9 +283,9 @@ header{
             background-position: right;
             transform: translate(0, -6px);
         }
-    } */
+    } 
 
-    /*FONCTIONNEMENT*/  
+    /*FONCTIONNEMENT*/
  .fonctionnement{
      margin: auto;
  }   
@@ -345,7 +346,7 @@ header{
     color:$color-primary;
     }
 
-/*RESTAURANTS*/ 
+/*RESTAURANTS*/
 .Resto{   
     background-color: $color-grey3;
     height: 1030px;
@@ -489,7 +490,7 @@ margin: 0;
     }
 }
 /*Coeur anime*/
-.heart_icon {
+/*.heart_icon {
     fill: transparent;
     stroke: var(--purple);
     stroke-width: 20;
@@ -609,8 +610,7 @@ footer{
 
 /*MENUS* ........................................................
 LE DELICE DES SENS*
-
-Header*/
+/*Header*/
 .header-menu{
     margin-top: 20px;
     text-align: center;
@@ -664,7 +664,34 @@ Header*/
 }
 
 /*COEUR ANIME*/
-.heart_icon1 {
+ .heart_icon1 {
+  width: 30px;
+  stroke-width: 30;
+  stroke:$color-primary;
+  fill: white;
+  cursor: pointer;
+  position: absolute;
+  right: 1.3rem;
+  top: 1.5rem;
+}
+
+.heart_icon1 .heart-full {
+  position: absolute;
+  fill: url(#text-fill);
+  stroke: none;
+}
+
+.heart_icon1 .heart-empty {
+  position: relative;
+}
+
+.heart_icon1 .heart-empty:hover {
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+/*.heart_icon1 {
     fill: transparent;
     stroke: var(--purple);
     stroke-width: 18;
@@ -988,20 +1015,22 @@ grid-area: plat-5;
 /*CHECKBOX*/
 .resto_item{
     display: flex;
+    justify-content: center;
     align-items: center;
 }
-.resto_item:hover{
-    i{
-        transform: rotate(1turn);
+.resto_item:hover .check_box i{
+       transform: rotate(1turn);   
        transition: all 500ms ease-in-out;
     }
-}
-.resto_item:hover .check_box{
-    animation: item-appear 700ms forwards;
-    transform: scale(1);
-}
-.resto_item:hover .menus__description--price{
+
+.resto_item:hover .check_box{  
+transform-origin: right;
+animation: item-appear 700ms forwards;
+    transform: scale(1);}
+
+.resto_item:hover .menus__description--price {
     transform: translateX(0);
+    transition: 0.5s ease;
     font-size: 1.3rem;
 }
 .resto_item:hover .title-subtitle-txt{
@@ -1010,11 +1039,12 @@ grid-area: plat-5;
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
 @keyframes item-appear {
     from{ transform: translate(25px);}
     to{transform: translate(0);}
-    
-}
+}   
+
 .menus_description{
     width: 93%;
     border-radius: 20px;
@@ -1026,7 +1056,7 @@ grid-area: plat-5;
     display: flex;
     justify-content: space-between;
     margin: 3%;
-    animation: menu-slidein 1500ms 100ms;
+    animation: slide-in-bottom 1500ms 100ms;
 }   
  .menus_description--price{
      font-size: 1.1rem;
@@ -1047,6 +1077,10 @@ grid-area: plat-5;
     }
 .menus_description--subtitle{
     margin-top: 10px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .title-subtitle-txt{
     font-size: 1.1rem;
@@ -1054,7 +1088,6 @@ grid-area: plat-5;
     width: 80%;
     overflow: hidden;  
 }
-
 
 .check_box{
     width: 100px;
@@ -1073,10 +1106,10 @@ grid-area: plat-5;
 /*APPARITION DES MENUS*/
   
 .menu_list{
-    animation: slide-top 0.5s ease forwards;
+    animation: slide-in-bottom 0.5s ease forwards;
 }
 
-@keyframes slide-top {
+/*@keyframes slide-top{
     0% {
       -webkit-transform: translateY(0);
               transform: translateY(0);
@@ -1085,40 +1118,40 @@ grid-area: plat-5;
       -webkit-transform: translateY(-100px);
               transform: translateY(-100px);
     }
-  }
+  }*/
 #entree-1{
-    animation: slide-top 1500ms 100ms;
+    animation: slide-in-bottom 1500ms 100ms;
 }
 #entree-2{
-    animation: slide-top 1500ms 200ms;
+    animation: slide-in-bottom 1500ms 200ms;
 }
 #entree-3{
-    animation: slide-top 1500ms 300ms;
+    animation: slide-in-bottom 1500ms 300ms;
 }
 #plat-4{
-     animation: slide-top 1500ms 400ms;
+     animation: slide-in-bottom 1500ms 400ms;
 }
 #plat-5{
-     animation: slide-top 1500ms 500ms;
+     animation: slide-in-bottom 1500ms 500ms;
 }
 #plat-6{
-     animation: slide-top 1500ms 600ms;
+     animation: slide-in-bottom 1500ms 600ms;
 }
 #dessert-7{
-     animation: slide-top 1500ms 700ms;
+     animation: slide-in-bottom 1500ms 700ms;
 }
 #dessert-8{
-    animation: slide-top 1500ms 800ms;
+    animation: slide-in-bottom 1500ms 800ms;
 }
 #dessert-9{
-    animation: slide-top 1500ms 900ms;
+    animation: slide-in-bottom 1500ms 900ms;
 }
 #dessert-10{
-     animation: slide-top 1500ms 1000ms;
+     animation: slide-in-bottom 1500ms 1000ms;
 }
 
 /*BTN COMMANDER*/
-/*.command{
+/*.command{RC
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1248,6 +1281,6 @@ form{
     } 
     @include tv{
         margin-top: 760px;
-        
-    }
+    }   
+  
 }
