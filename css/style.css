@@ -102,8 +102,6 @@
   margin-bottom: 35px;
   margin-right: 65px;
   margin-left: 65px;
-  /*position: relative;
-   z-index: 1;*/
   background-size: 200%;
   transition: 0.6s;
   cursor: pointer;
@@ -367,11 +365,6 @@ path {
   transform: translate(0, -6px);
 }
 
-/*:root {
-    --purple-light:#FF79DA;
-    --purple: #9356DC;
-
-}  */
 h1 {
   font-family: "Shrikhand", "cursive";
   font-weight: bold;
@@ -1556,7 +1549,7 @@ path {
   font-size: 1rem !important;
   font-weight: bold;
   color: #fff;
-  margin-top: 35px;
+  margin-top: 25px;
   margin-bottom: 20px;
   background-size: 200%;
   transition: 0.6s;
