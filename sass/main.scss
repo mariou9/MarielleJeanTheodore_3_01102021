@@ -667,7 +667,7 @@ LE DELICE DES SENS*
  .heart_icon1 {
   width: 30px;
   stroke-width: 30;
-  stroke:$color-primary;
+  stroke:black;
   fill: white;
   cursor: pointer;
   position: absolute;
@@ -1024,7 +1024,7 @@ grid-area: plat-5;
     }
 
 .resto_item:hover .check_box{  
-transform-origin: right;
+/*transform-origin: right;*/
 animation: item-appear 700ms forwards;
     transform: scale(1);}
 

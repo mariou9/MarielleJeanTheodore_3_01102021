@@ -4,7 +4,7 @@
   "description": "\"Oh my food\" est un service de restauration totalement novateur proposant des menus gastronomiques.",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/main.scss:.public/css/style.css"
+    "sass": "sass --watch ./sass/main.scss:css/style.css"
   },
   "repository": {
     "type": "git",
