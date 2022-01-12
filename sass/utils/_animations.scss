@@ -117,7 +117,7 @@
 
 .animate_heart .heart-full {
   position: absolute;
-  fill: url(#text-fill);
+  fill: url(#textfill);
   stroke: none;
 }
 
@@ -216,7 +216,7 @@ path {
 
 .resto_item:hover .check_box i {
     transform: rotate(1turn);
-     transition: all 500ms both;
+     transition: all 500ms ease-in-out;
   }
   
 .resto_item:hover .check_box{
@@ -224,8 +224,8 @@ path {
   transform: scale(1);}
 
 .resto_item:hover .menus__description--price {
-  transform: translateX(0);
-  transition: 0.5s ease;
+  animation: slide-left 0.5s forwards ;
+  /*transform: translateX(0);*/
   font-size: 1.3rem;
 }
 .resto_item:hover .title-subtitle-txt{
@@ -240,6 +240,14 @@ path {
   to{transform: translate(0);}
 }  
 
+@keyframes slide-left {
+  0% {
+            transform: translateX(0);
+  }
+  100% {
+            transform: translateX(5px);
+  }
+}
 /*APPARITION PROGRESSIVE DES MENUS*/
 .menu_list{
   animation: slide-in-bottom 5s ease-in-out forwards;

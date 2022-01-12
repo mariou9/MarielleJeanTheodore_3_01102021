@@ -618,36 +618,36 @@ LE DELICE DES SENS*
     width: 100%;
     object-fit: cover;
     height: 250px;
-    position: relative;
+    position: relative;  
 }
 
 .container_menus{
     background-color: #f1f1f1;
     width: 100%;
-    height: 1525px;
+    height: 1400px;
     border-radius: 25px 25px 0 0;
     position: absolute;
     margin-top: -30px;
     margin-right: 0;
     @include mobile1{
         width: 600px;
-        height: 1885px;
+        height: 1685px;
     }
      @include tablet{
         width: 768px;
-        height: 1860px;
+        height: 1700px;
     }
     @include desktop{
         width: 992px;
-        height: 2090px;
+        height: 1930px;
     }
     @include Xlargedevices{
         width: 1200px;
-        height: 700px;
+        height: 630px;
     } 
     @include tv{
         width: 1440px;
-        height: 790px;
+        height: 690px;
     }
 }
 
@@ -833,8 +833,7 @@ path {
      @include desktop{
         display: grid;
         grid-template-columns: auto;
-        grid-template-rows: repeat(11,0.7fr);
-        
+        grid-template-rows: repeat(11,0.7fr);   
         grid-template-areas: 
         "section_title1" 
         "entree-1"
@@ -851,16 +850,19 @@ path {
         min-width: 992px;     
      }
      @include Xlargedevices{
-        width: 1200px;
+        
         display: grid;
         grid-template-columns: repeat(3,0.7fr);
         grid-template-rows: auto;
         grid-gap:0px;
         grid-template-areas: 
-        "section_title1 section_title2 section_title3"
-         "entree-1 plat-4 dessert-7"
-         "entree-2 plat-5 dessert-8"
-         "entree-3 plat-6 dessert-9";
+        
+         "section_title1 section_title2 section_title3"
+         "entree-1 entree-2 entree-3" 
+         "plat-4 plat-5 plat-6"
+         "dessert-7 dessert-8 dessert-9";
+        min-width: 1200px;
+        gap: 0px;
     }  
      @include tv{
         display: grid;
@@ -868,10 +870,10 @@ path {
         grid-template-rows: repeat(4, 1fr);
         grid-template-areas: 
          "section_title1 section_title2 section_title3"
-         "entree-1 plat-4 dessert-7"
-         "entree-2 plat-5 dessert-8"
+         "entree-1 plat-4 dessert-7" 
+         "entree-2 plat-5 dessert-8 "
          "entree-3 plat-6 dessert-9";
-         gap: 10px;
+         gap: 0px;
         min-width: 1440px;
   
      }
@@ -943,7 +945,7 @@ grid-area: plat-5;
     margin-bottom: -12px;
     }
     @include tv{
-        margin-bottom: 55px;
+        margin-bottom: 30px;
         }
 }
 .section_title2 {
@@ -973,7 +975,7 @@ grid-area: plat-5;
     margin-bottom: -12px;
     }
     @include tv{
-        margin-bottom: 55px;
+        margin-bottom: 30px;
         }
 }
 .section_title3 {
@@ -1003,14 +1005,13 @@ grid-area: plat-5;
     margin-bottom: -12px;
     }
     @include tv{
-    margin-bottom: 55px;
+    margin-bottom: 30px;
     }
 }
 
 /*CHECKBOX*/
 .resto_item{
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 .resto_item:hover .check_box i{
@@ -1020,14 +1021,16 @@ grid-area: plat-5;
 
 .resto_item:hover .check_box{  
 /*transform-origin: right;*/
-animation: item-appear 700ms forwards;
-    transform: scale(1);}
-
-.resto_item:hover .menus__description--price {
-    transform: translateX(0);
-    transition: 0.5s ease;
-    font-size: 1.3rem;
+    animation: item-appear 700ms forwards;
+    transform: scale(1);
 }
+
+.resto_item:hover .menus_description--price {
+     animation: slide-left 0.5s forwards ;
+    /* transform: translateX(0px);  */
+      font-size: 1.3rem;
+}
+
 .resto_item:hover .title-subtitle-txt{
     width: 100%;
     white-space: nowrap;
@@ -1038,12 +1041,22 @@ animation: item-appear 700ms forwards;
 @keyframes item-appear {
     from{ transform: translate(25px);}
     to{transform: translate(0);}
-}   
+}
+ 
+  @keyframes slide-left {
+    0% {
+              transform: translateX(0);
+    }
+    100% {
+              transform: translateX(5px);
+    }
+  }
+  
 
 .menus_description{
     width: 93%;
     border-radius: 20px;
-    height: 105px;
+    height: 90px;
     border: 0 solid #fff;
     box-shadow: 1px 3px 3px #d6d6d6;
     background-color: #fff;
@@ -1054,12 +1067,12 @@ animation: item-appear 700ms forwards;
     animation: slide-in-bottom 1500ms 100ms;
 }   
  .menus_description--price{
-     font-size: 1.1rem;
+    font-size: 1.1rem;  
      font-weight: 900;
      margin-right: 15px;
-     margin-top: 68px;
+     margin-top: 40px;
      transform: translateX(80px);
-     transition: all 500ms;
+    /* transition: all 5s ease-out;*/
  }
     .menus_description--title {
         width: 100%;
@@ -1078,6 +1091,7 @@ animation: item-appear 700ms forwards;
     text-overflow: ellipsis;
 }
 .title-subtitle-txt{
+
     font-size: 1.1rem;
     margin-left: 3%;
     width: 80%;
@@ -1086,7 +1100,7 @@ animation: item-appear 700ms forwards;
 
 .check_box{
     width: 100px;
-    height: 105px;
+    height: 90px;
     background-color: $color-tertiary;
     display: flex;
     justify-content: center;
@@ -1104,16 +1118,6 @@ animation: item-appear 700ms forwards;
     animation: slide-in-bottom 0.5s ease forwards;
 }
 
-/*@keyframes slide-top{
-    0% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-    }
-    100% {
-      -webkit-transform: translateY(-100px);
-              transform: translateY(-100px);
-    }
-  }*/
 #entree-1{
     animation: slide-in-bottom 1500ms 100ms;
 }
@@ -1225,7 +1229,7 @@ form{
     font-size: 1rem;
     color: white;
     height: auto;
-    margin-top: 1500px;
+    margin-top: 1370px;
     
     
     & h1{
@@ -1259,23 +1263,116 @@ form{
         margin-top: 1500px;
     } 
     @include mobile1{
-        margin-top: 1860px;
+        margin-top: 1655px;
         
     }
      @include tablet{
-        margin-top: 1830px;
+        margin-top: 1670px;
         
     }
     @include desktop{
-        margin-top: 2065px;
+        margin-top: 1900px;
         
     }
     @include Xlargedevices{
-        margin-top: 670px;
+        margin-top: 600px;
       
     } 
     @include tv{
-        margin-top: 760px;
+        margin-top: 660px;
+    }   
+  
+}
+
+/*MENU LA NOTE ENCHANTEE*/
+.container_menus1{
+    background-color: #f1f1f1;
+    width: 100%;
+    height: 1585px;
+    border-radius: 25px 25px 0 0;
+    position: absolute;
+    margin-top: -30px;
+    margin-right: 0;
+    @include mobile1{
+        width: 600px;
+        height: 1830px;
+    }
+     @include tablet{
+        width: 768px;
+        height: 1820px;
+    }
+    @include desktop{
+        width: 992px;
+        height: 2080px;
+    }
+    @include Xlargedevices{
+        width: 1200px;
+        height: 740px;
+    } 
+    @include tv{
+        width: 1440px;
+        height: 820px;
+    }
+}
+
+
+.menu_footer1{
+    background-color: $color-grey;
+    padding-bottom: 30px;
+    font-size: 1rem;
+    color: white;
+    height: auto;
+    margin-top: 1560px;
+    
+    
+    & h1{
+        margin-top: 0;
+        padding-top: 20px;
+        padding-left: 40px;
+        margin-bottom: 15px;
+        font-family: "Shrikhand";    
+    }
+    & ul{
+        list-style: none;
+        line-height: 1rem;   
+    }
+    & i{
+        font-size: 1.2rem;
+        width: 1.6rem;
+        color: white;
+        padding-right: .3rem;
+        padding-left: 0.3rem;
+        margin-right: 15px;
+    }
+    & a{
+        color: white;
+        font-style: normal;
+    } 
+    & li{
+        margin-bottom: 15px;
+        font-size: 1rem;
+    } 
+    @include mobile{
+        margin-top: 1500px;
+    } 
+    @include mobile1{
+        margin-top: 1800px;
+        
+    }
+     @include tablet{
+        margin-top: 1790px;
+        
+    }
+    @include desktop{
+        margin-top: 2050px;
+        
+    }
+    @include Xlargedevices{
+        margin-top: 710px;
+      
+    } 
+    @include tv{
+        margin-top: 790px;
     }   
   
 }

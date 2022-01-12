@@ -126,7 +126,7 @@
 
 .animate_heart .heart-full {
   position: absolute;
-  fill: url(#text-fill);
+  fill: url(#textfill);
   stroke: none;
 }
 
@@ -225,7 +225,7 @@ path {
 /*EFFET CHECK BOX*/
 .resto_item:hover .check_box i {
   transform: rotate(1turn);
-  transition: all 500ms both;
+  transition: all 500ms ease-in-out;
 }
 
 .resto_item:hover .check_box {
@@ -234,8 +234,8 @@ path {
 }
 
 .resto_item:hover .menus__description--price {
-  transform: translateX(0);
-  transition: 0.5s ease;
+  animation: slide-left 0.5s forwards;
+  /*transform: translateX(0);*/
   font-size: 1.3rem;
 }
 
@@ -252,6 +252,14 @@ path {
   }
   to {
     transform: translate(0);
+  }
+}
+@keyframes slide-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(5px);
   }
 }
 /*APPARITION PROGRESSIVE DES MENUS*/
@@ -430,7 +438,7 @@ body {
     margin: auto;
   }
 }
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1390px) {
   main {
     width: 1440px;
     margin: auto;
@@ -727,7 +735,7 @@ form {
     height: 650px;
   }
 }
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1390px) {
   .Resto {
     width: 1440px;
     height: 650px;
@@ -789,7 +797,7 @@ form {
     min-width: 1200px;
   }
 }
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1390px) {
   .Restos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -992,7 +1000,7 @@ LE DELICE DES SENS*
 .container_menus {
   background-color: #f1f1f1;
   width: 100%;
-  height: 1525px;
+  height: 1400px;
   border-radius: 25px 25px 0 0;
   position: absolute;
   margin-top: -30px;
@@ -1001,31 +1009,31 @@ LE DELICE DES SENS*
 @media screen and (min-width: 600px) {
   .container_menus {
     width: 600px;
-    height: 1885px;
+    height: 1685px;
   }
 }
 @media screen and (min-width: 768px) {
   .container_menus {
     width: 768px;
-    height: 1860px;
+    height: 1700px;
   }
 }
 @media screen and (min-width: 992px) {
   .container_menus {
     width: 992px;
-    height: 2090px;
+    height: 1930px;
   }
 }
 @media screen and (min-width: 1200px) {
   .container_menus {
     width: 1200px;
-    height: 700px;
+    height: 630px;
   }
 }
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1390px) {
   .container_menus {
     width: 1440px;
-    height: 790px;
+    height: 690px;
   }
 }
 
@@ -1184,21 +1192,22 @@ path {
 }
 @media screen and (min-width: 1200px) {
   .menus {
-    width: 1200px;
     display: grid;
     grid-template-columns: repeat(3, 0.7fr);
     grid-template-rows: auto;
     grid-gap: 0px;
-    grid-template-areas: "section_title1 section_title2 section_title3" "entree-1 plat-4 dessert-7" "entree-2 plat-5 dessert-8" "entree-3 plat-6 dessert-9";
+    grid-template-areas: "section_title1 section_title2 section_title3" "entree-1 entree-2 entree-3" "plat-4 plat-5 plat-6" "dessert-7 dessert-8 dessert-9";
+    min-width: 1200px;
+    gap: 0px;
   }
 }
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1390px) {
   .menus {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    grid-template-areas: "section_title1 section_title2 section_title3" "entree-1 plat-4 dessert-7" "entree-2 plat-5 dessert-8" "entree-3 plat-6 dessert-9";
-    gap: 10px;
+    grid-template-areas: "section_title1 section_title2 section_title3" "entree-1 plat-4 dessert-7" "entree-2 plat-5 dessert-8 " "entree-3 plat-6 dessert-9";
+    gap: 0px;
     min-width: 1440px;
   }
 }
@@ -1288,9 +1297,9 @@ path {
     margin-bottom: -12px;
   }
 }
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1390px) {
   .section_title1::before {
-    margin-bottom: 55px;
+    margin-bottom: 30px;
   }
 }
 
@@ -1330,9 +1339,9 @@ path {
     margin-bottom: -12px;
   }
 }
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1390px) {
   .section_title2::before {
-    margin-bottom: 55px;
+    margin-bottom: 30px;
   }
 }
 
@@ -1372,16 +1381,15 @@ path {
     margin-bottom: -12px;
   }
 }
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1390px) {
   .section_title3::before {
-    margin-bottom: 55px;
+    margin-bottom: 30px;
   }
 }
 
 /*CHECKBOX*/
 .resto_item {
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
@@ -1396,9 +1404,9 @@ path {
   transform: scale(1);
 }
 
-.resto_item:hover .menus__description--price {
-  transform: translateX(0);
-  transition: 0.5s ease;
+.resto_item:hover .menus_description--price {
+  animation: slide-left 0.5s forwards;
+  /* transform: translateX(0px);  */
   font-size: 1.3rem;
 }
 
@@ -1417,10 +1425,18 @@ path {
     transform: translate(0);
   }
 }
+@keyframes slide-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(5px);
+  }
+}
 .menus_description {
   width: 93%;
   border-radius: 20px;
-  height: 105px;
+  height: 90px;
   border: 0 solid #fff;
   box-shadow: 1px 3px 3px #d6d6d6;
   background-color: #fff;
@@ -1435,9 +1451,9 @@ path {
   font-size: 1.1rem;
   font-weight: 900;
   margin-right: 15px;
-  margin-top: 68px;
+  margin-top: 40px;
   transform: translateX(80px);
-  transition: all 500ms;
+  /* transition: all 5s ease-out;*/
 }
 
 .menus_description--title {
@@ -1467,7 +1483,7 @@ path {
 
 .check_box {
   width: 100px;
-  height: 105px;
+  height: 90px;
   background-color: #99E2D0;
   display: flex;
   justify-content: center;
@@ -1484,16 +1500,6 @@ path {
   animation: slide-in-bottom 0.5s ease forwards;
 }
 
-/*@keyframes slide-top{
-    0% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-    }
-    100% {
-      -webkit-transform: translateY(-100px);
-              transform: translateY(-100px);
-    }
-  }*/
 #entree-1 {
   animation: slide-in-bottom 1500ms 100ms;
 }
@@ -1614,7 +1620,7 @@ form {
   font-size: 1rem;
   color: white;
   height: auto;
-  margin-top: 1500px;
+  margin-top: 1370px;
 }
 .menu_footer h1 {
   margin-top: 0;
@@ -1650,27 +1656,134 @@ form {
 }
 @media screen and (min-width: 600px) {
   .menu_footer {
-    margin-top: 1860px;
+    margin-top: 1655px;
   }
 }
 @media screen and (min-width: 768px) {
   .menu_footer {
-    margin-top: 1830px;
+    margin-top: 1670px;
   }
 }
 @media screen and (min-width: 992px) {
   .menu_footer {
-    margin-top: 2065px;
+    margin-top: 1900px;
   }
 }
 @media screen and (min-width: 1200px) {
   .menu_footer {
-    margin-top: 670px;
+    margin-top: 600px;
   }
 }
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1390px) {
   .menu_footer {
-    margin-top: 760px;
+    margin-top: 660px;
+  }
+}
+
+/*MENU LA NOTE ENCHANTEE*/
+.container_menus1 {
+  background-color: #f1f1f1;
+  width: 100%;
+  height: 1585px;
+  border-radius: 25px 25px 0 0;
+  position: absolute;
+  margin-top: -30px;
+  margin-right: 0;
+}
+@media screen and (min-width: 600px) {
+  .container_menus1 {
+    width: 600px;
+    height: 1830px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container_menus1 {
+    width: 768px;
+    height: 1820px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .container_menus1 {
+    width: 992px;
+    height: 2080px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container_menus1 {
+    width: 1200px;
+    height: 740px;
+  }
+}
+@media screen and (min-width: 1390px) {
+  .container_menus1 {
+    width: 1440px;
+    height: 820px;
+  }
+}
+
+.menu_footer1 {
+  background-color: #353535;
+  padding-bottom: 30px;
+  font-size: 1rem;
+  color: white;
+  height: auto;
+  margin-top: 1560px;
+}
+.menu_footer1 h1 {
+  margin-top: 0;
+  padding-top: 20px;
+  padding-left: 40px;
+  margin-bottom: 15px;
+  font-family: "Shrikhand";
+}
+.menu_footer1 ul {
+  list-style: none;
+  line-height: 1rem;
+}
+.menu_footer1 i {
+  font-size: 1.2rem;
+  width: 1.6rem;
+  color: white;
+  padding-right: 0.3rem;
+  padding-left: 0.3rem;
+  margin-right: 15px;
+}
+.menu_footer1 a {
+  color: white;
+  font-style: normal;
+}
+.menu_footer1 li {
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+@media screen and (min-width: 576px) {
+  .menu_footer1 {
+    margin-top: 1500px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .menu_footer1 {
+    margin-top: 1800px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .menu_footer1 {
+    margin-top: 1790px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .menu_footer1 {
+    margin-top: 2050px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .menu_footer1 {
+    margin-top: 710px;
+  }
+}
+@media screen and (min-width: 1390px) {
+  .menu_footer1 {
+    margin-top: 790px;
   }
 }
 
