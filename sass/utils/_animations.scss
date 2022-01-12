@@ -117,7 +117,7 @@
 
 .animate_heart .heart-full {
   position: absolute;
-  fill: url(#textfill);
+  fill: url(#text-fill);
   stroke: none;
 }
 
@@ -248,6 +248,7 @@ path {
             transform: translateX(5px);
   }
 }
+
 /*APPARITION PROGRESSIVE DES MENUS*/
 .menu_list{
   animation: slide-in-bottom 5s ease-in-out forwards;
@@ -265,6 +266,7 @@ path {
     opacity: 1;
   }
 }
+
 @keyframes slide-in-bottom {
   0% {
             transform: translateY(25px);
@@ -288,6 +290,7 @@ path {
   animation: slide-in-bottom 1500ms 100ms;
   opacity: 0.1 s;
 }
+
 #entree-2{
   animation: slide-in-bottom 1500ms 200ms;
   opacity: 0.2 s;
@@ -297,30 +300,41 @@ path {
   animation: slide-in-bottom 1500ms 300ms;
   opacity: 0.3 s;
 }
+#entree-4{
+  animation: slide-in-bottom 1500ms 300ms;
+  opacity: 0.3 s;
+}
+
 #plat-4{
    animation: slide-in-bottom 1500ms 400ms;
    opacity: 0.4 s;
 }
+
 #plat-5{
    animation: slide-in-bottom 1500ms 500ms;
    opacity: 0.5 s;
 }
+
 #plat-6{
    animation: slide-in-bottom 1500ms 600ms;
    opacity: 0.6 s;
 }
+
 #dessert-7{
    animation: slide-in-bottom 1500ms 700ms;
    opacity: 0.7 s;
 }
+
 #dessert-8{
   animation: slide-in-bottom 1500ms 800ms;
   opacity: 0.8 s;
 }
+
 #dessert-9{
   animation: slide-in-bottom 1500ms 900ms;
   opacity: 0.9s;
 }
+
 #dessert-10{
    animation: slide-in-bottom 1500ms 1000ms;
    opacity: 1 s;

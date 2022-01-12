@@ -126,7 +126,7 @@
 
 .animate_heart .heart-full {
   position: absolute;
-  fill: url(#textfill);
+  fill: url(#text-fill);
   stroke: none;
 }
 
@@ -307,6 +307,11 @@ path {
 }
 
 #entree-3 {
+  animation: slide-in-bottom 1500ms 300ms;
+  opacity: 0.3 s;
+}
+
+#entree-4 {
   animation: slide-in-bottom 1500ms 300ms;
   opacity: 0.3 s;
 }
@@ -1194,9 +1199,10 @@ path {
   .menus {
     display: grid;
     grid-template-columns: repeat(3, 0.7fr);
-    grid-template-rows: auto;
+    grid-template-rows: repeat(4, 0.7fr);
     grid-gap: 0px;
-    grid-template-areas: "section_title1 section_title2 section_title3" "entree-1 entree-2 entree-3" "plat-4 plat-5 plat-6" "dessert-7 dessert-8 dessert-9";
+    grid-template-areas: "section_title1 section_title2 section_title3" "entree-1 plat-4 dessert-7" "entree-2 plat-5 dessert-8 " "entree-3 plat-6 dessert-9";
+    gap: 0px;
     min-width: 1200px;
     gap: 0px;
   }
@@ -1228,35 +1234,39 @@ path {
   grid-area: entree-1;
 }
 
-.entree-2 {
+#entree-2 {
   grid-area: entree-2;
 }
 
-.entree-3 {
+#entree-3 {
   grid-area: entree-3;
 }
 
-.plat-4 {
+.entree-4 {
+  grid-area: entree-4;
+}
+
+#plat-4 {
   grid-area: plat-4;
 }
 
-.plat-5 {
+#plat-5 {
   grid-area: plat-5;
 }
 
-.plat-6 {
+#plat-6 {
   grid-area: plat-6;
 }
 
-.dessert-7 {
+#dessert-7 {
   grid-area: dessert-7;
 }
 
-.dessert-8 {
+#dessert-8 {
   grid-area: dessert-8;
 }
 
-.dessert-9 {
+#dessert-9 {
   grid-area: dessert-9;
 }
 
@@ -1512,6 +1522,10 @@ path {
   animation: slide-in-bottom 1500ms 300ms;
 }
 
+#entree-4 {
+  animation: slide-in-bottom 1500ms 300ms;
+}
+
 #plat-4 {
   animation: slide-in-bottom 1500ms 400ms;
 }
@@ -1684,7 +1698,7 @@ form {
 .container_menus1 {
   background-color: #f1f1f1;
   width: 100%;
-  height: 1585px;
+  height: 1525px;
   border-radius: 25px 25px 0 0;
   position: absolute;
   margin-top: -30px;
@@ -1727,7 +1741,7 @@ form {
   font-size: 1rem;
   color: white;
   height: auto;
-  margin-top: 1560px;
+  margin-top: 1500px;
 }
 .menu_footer1 h1 {
   margin-top: 0;
