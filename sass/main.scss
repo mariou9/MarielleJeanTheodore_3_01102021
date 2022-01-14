@@ -28,10 +28,6 @@ a{
     color: black;
 }
 
-/*$color-primary:#9356DC;/*BTN
-$color-secondary:#ff79DA;/*btn
-$color-tertiary:#99E2D0;*/
-
 *{
     box-sizing: border-box;
 }
@@ -42,14 +38,13 @@ body{
 }
 
 main{
-
     @include mobile{
         width: 576px;
          display: flex;
          display: flex;
         flex-direction: column;
          margin: auto;
-    } 
+    }
     @include mobile1{
         display: flex;
         flex-direction: column;
@@ -128,9 +123,7 @@ main{
   .cup_of_coffee{      
       z-index: 1;
       animation: fade-out 6s forwards;
-     /* overflow: hidden;
-      animation: fill 3s ease-in-out infinite;*/
-     animation-delay: 5s;
+      animation-delay: 5s;
   }
 
   @keyframes fade-out{
@@ -251,7 +244,6 @@ header{
         text-align: center;   
         font-size: 1.1 rem;
         margin: 2px;
-       /* word-wrap: break-word;*/
         line-height: none;
     }
     form{
@@ -672,7 +664,7 @@ LE DELICE DES SENS*
 
 .heart_icon1 .heart-full {
   position: absolute;
-  fill: url(#text-fill);
+  fill: url(#textfill);
   stroke: none;
 }
 
@@ -1023,14 +1015,12 @@ grid-area: plat-5;
     }
 
 .resto_item:hover .check_box{  
-/*transform-origin: right;*/
     animation: item-appear 700ms forwards;
     transform: scale(1);
 }
 
 .resto_item:hover .menus_description--price {
      animation: slide-left 0.5s forwards ;
-    /* transform: translateX(0px);  */
       font-size: 1.3rem;
 }
 
@@ -1075,7 +1065,7 @@ grid-area: plat-5;
      margin-right: 15px;
      margin-top: 40px;
      transform: translateX(80px);
-    /* transition: all 5s ease-out;*/
+   
  }
     .menus_description--title {
         width: 100%;
@@ -1156,11 +1146,7 @@ grid-area: plat-5;
 }
 
 /*BTN COMMANDER*/
-/*.command{RC
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}*/
+
 .command_button{
     width: 220px; 
     height: 50px;
