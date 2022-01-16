@@ -348,7 +348,7 @@ path {
 
 #dessert-9 {
   animation: slide-in-bottom 1500ms 900ms;
-  opacity: 0.9s;
+  opacity: 0.9 s;
 }
 
 #dessert-10 {
@@ -553,7 +553,7 @@ header .localisation {
 header i {
   color: grey;
   padding-right: 15px;
-  padding-left: 1%;
+  padding-left: 15px;
 }
 header p {
   font-weight: bold;
