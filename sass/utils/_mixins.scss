@@ -24,7 +24,7 @@
 }
 /*Application x-large devices*/
 @mixin Xlargedevices{  
-  @media screen and (min-width: 1200px){
+  @media screen and (min-width: 1230px){
     @content; 
   };
 }
@@ -32,4 +32,11 @@
     @media screen and (min-width: 1390px){
       @content; 
     };
+}
+ /*Disposition dans l'espace*/
+
+ @mixin flexbox-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

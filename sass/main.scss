@@ -71,8 +71,69 @@ main{
     }
 }
 
-/*loader spinner reste en comment!
-.load_cup {   
+/*loader */
+.spinner {
+    height: 100%;
+    background: white;
+    margin: auto;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 20;
+    animation: spinner 2s linear ;
+    visibility: hidden;
+    &__border {
+        @include flexbox-center;
+        border: 10px solid transparent;
+        border-top: 10px solid $color-tertiary;
+        border-bottom: 10px solid $color-secondary;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        margin: auto;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        animation: spinner-border 2s linear ;
+        z-index: 10;
+        visibility: hidden;
+    }
+    &__center {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: $color-primary;
+    
+    }
+}
+
+@keyframes spinner {
+    0% {
+        visibility: visible;
+        opacity: 0.9;
+    }
+    70% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes spinner-border {
+    0% {
+        visibility: visible;
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(360deg);
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+/*.load_cup {   
     height: 140px;
     width: 200px;
     border: 6px solid #fff;
@@ -118,13 +179,13 @@ main{
       left: 730px;
       bottom: 320px;
       border-radius: 0px 25px 80px 0px;   
-  } */
+  } *
   
-  .cup_of_coffee{      
+  .spinner{      
       z-index: 1;
       animation: fade-out 6s forwards;
       animation-delay: 5s;
-  }
+  }*
 
   @keyframes fade-out{
     from{
@@ -136,7 +197,7 @@ main{
 }
   .accueil{
     position: relative;
-    animation: fade-in 5s ease-in;
+ /*   animation: fade-in 5s ease-in;
 }
 
 @keyframes fade-in{
@@ -559,12 +620,13 @@ path {
 }
 
 /*FOOTER*/
-footer{
+.footer{
     background-color: $color-grey;
     padding-bottom: 30px;
     margin-top: 0px;
     font-size: 1.2rem;
     color: white;
+    cursor: pointer;
 
     & h1{
         margin-top: 0;
@@ -595,6 +657,10 @@ footer{
     }     
 } 
 
+.footer_bloc:hover .foot_news li a {
+    text-decoration: underline;
+} 
+
 /*MENUS* ........................................................
 LE DELICE DES SENS*
 /*Header*/
@@ -606,6 +672,7 @@ LE DELICE DES SENS*
     margin-top: 20px;
     font-size: 2rem;
 }
+
 .tag img{
     width: 100%;
     object-fit: cover;
@@ -614,28 +681,30 @@ LE DELICE DES SENS*
 }
 
 .container_menus{
+    
     background-color: #f1f1f1;
     width: 100%;
-    height: 1400px;
+    height: 1450px;
     border-radius: 25px 25px 0 0;
     position: absolute;
     margin-top: -30px;
     margin-right: 0;
     @include mobile1{
         width: 600px;
-        height: 1685px;
+        height: 1650px;
     }
      @include tablet{
         width: 768px;
-        height: 1700px;
+        height: 1650px;
     }
     @include desktop{
         width: 992px;
-        height: 1930px;
+        height: 1660px;
     }
     @include Xlargedevices{
         width: 1200px;
-        height: 630px;
+        height: 650px;
+        
     } 
     @include tv{
         width: 1440px;
@@ -646,7 +715,7 @@ LE DELICE DES SENS*
 
 .menus-title{
     font-weight: normal;
-    font-size: 1.5rem;   
+    font-size: 1.6rem;   
     margin: 30px 10px 30px 20px;
 }
 
@@ -786,7 +855,7 @@ path {
             display: grid;
             grid-template-columns: auto;
             grid-template-rows:repeat(11,0.8fr) ;
-            grid-gap:5px;
+            grid-gap:0;
             grid-template-areas: 
             "section_title1" 
             "entree-1"
@@ -843,17 +912,15 @@ path {
      }
      @include Xlargedevices{ 
         display: grid;
-        grid-template-columns: repeat(3, 0.7fr);
+        grid-template-columns: 405px 405px 405px;
         grid-template-rows: repeat(4, 0.7fr);
-        grid-gap:0px;
+        grid-gap:0;
         grid-template-areas: 
          "section_title1 section_title2 section_title3"
          "entree-1 plat-4 dessert-7" 
          "entree-2 plat-5 dessert-8 "
          "entree-3 plat-6 dessert-9";
-         gap: 0px;
-        min-width: 1200px;
-        gap: 0px;
+        min-width: 1230px;
     }  
      @include tv{
         display: grid;
@@ -864,7 +931,6 @@ path {
          "entree-1 plat-4 dessert-7" 
          "entree-2 plat-5 dessert-8 "
          "entree-3 plat-6 dessert-9";
-         gap: 0px;
         min-width: 1440px;
   
      }
@@ -1056,9 +1122,22 @@ grid-area: plat-5;
     margin: 4%;
     display: flex;
     justify-content: space-between;
-    margin: 3%;
     animation: slide-in-bottom 1500ms 100ms;
-}   
+    @include mobile1{
+        margin: 3%;
+    }
+    @include desktop{
+        margin: 2%;
+    }
+    @include Xlargedevices{
+        width: 87%;
+        margin: 3%;    
+    }
+    @include tv{
+        margin: 3%;
+        width: 93%;
+} 
+}  
  .menus_description--price{
     font-size: 1.1rem;  
      font-weight: 900;
@@ -1221,7 +1300,8 @@ form{
     font-size: 1rem;
     color: white;
     height: auto;
-    margin-top: 1370px;
+    margin-top: 1420px;
+    cursor: pointer;
     
     
     & h1{
@@ -1246,66 +1326,73 @@ form{
     & a{
         color: white;
         font-style: normal;
+        
     } 
     & li{
         margin-bottom: 15px;
         font-size: 1rem;
     } 
     @include mobile{
-        margin-top: 1500px;
+        margin-top: 1420px;
     } 
     @include mobile1{
-        margin-top: 1655px;
+        margin-top: 1620px;
         
     }
      @include tablet{
-        margin-top: 1670px;
+        margin-top: 1620px;
         
     }
     @include desktop{
-        margin-top: 1900px;
+        margin-top: 1630px;
         
     }
     @include Xlargedevices{
-        margin-top: 600px;
+        margin-top: 620px;
       
     } 
     @include tv{
         margin-top: 660px;
-    }   
-  
+    }    
 }
+
+ .footer_bloc:hover .foot_news {
+     text-decoration: underline;
+ } 
 
 /*MENU LA NOTE ENCHANTEE*/
 .container_menus1{
     background-color: #f1f1f1;
     width: 100%;
-    height: 1525px;
+    height: 1575px;
     border-radius: 25px 25px 0 0;
     position: absolute;
     margin-top: -30px;
     margin-right: 0;
     @include mobile1{
         width: 600px;
-        height: 1830px;
+        height: 1770px;
     }
      @include tablet{
         width: 768px;
-        height: 1820px;
+        height: 1780px;
     }
     @include desktop{
         width: 992px;
-        height: 2080px;
+        height: 1780px;
     }
     @include Xlargedevices{
         width: 1200px;
-        height: 740px;
+        height: 760px;
     } 
     @include tv{
         width: 1440px;
         height: 820px;
     }
 }
+.footer_bloc:hover .foot_news {
+    text-decoration: underline;
+} 
 
 
 .menu_footer1{
@@ -1314,7 +1401,8 @@ form{
     font-size: 1rem;
     color: white;
     height: auto;
-    margin-top: 1500px;
+    margin-top: 1540px;
+    cursor: pointer;
     
     
     & h1{
@@ -1345,22 +1433,22 @@ form{
         font-size: 1rem;
     } 
     @include mobile{
-        margin-top: 1500px;
+        margin-top: 1540px;
     } 
     @include mobile1{
-        margin-top: 1800px;
+        margin-top: 1740px;
         
     }
      @include tablet{
-        margin-top: 1790px;
+        margin-top: 1750px;
         
     }
     @include desktop{
-        margin-top: 2050px;
+        margin-top: 1750px;
         
     }
     @include Xlargedevices{
-        margin-top: 710px;
+        margin-top: 730px;
       
     } 
     @include tv{

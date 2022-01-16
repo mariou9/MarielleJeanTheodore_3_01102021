@@ -13,9 +13,12 @@ crossorigin="anonymous">
 </head>
 
 <body>
-        <div class="cup_of_coffee">  <!--loader spinner-->
-                <div class="load_cup"></div>    
+    <!--loader spinner-->
+    <div class="spinner">
+        <div class="spinner__border">
+          <div class="spinner__center"></div>
         </div>
+      </div>         
 
     <!--HEADER-->
     <div class="accueil">   
@@ -118,7 +121,7 @@ crossorigin="anonymous">
                                          s7.62-1.404,10.532-3.953c22.094-19.322,43.348-37.435,62.111-53.425C439.057,330.529,512,268.368,512,177.514
                                          C512,93.417,453.532,30,376,30z"/>
                               <defs>
-                                <linearGradient id="textfill">
+                                <linearGradient>
                                       <stop offset="0%" stop-color="#9356DC" />
                                       <stop offset="100%" stop-color="#FF79DA" />
                                 </linearGradient>
@@ -159,7 +162,7 @@ crossorigin="anonymous">
                                          s7.62-1.404,10.532-3.953c22.094-19.322,43.348-37.435,62.111-53.425C439.057,330.529,512,268.368,512,177.514
                                          C512,93.417,453.532,30,376,30z"/>
                               <defs>
-                                <linearGradient id="textfill">
+                                <linearGradient>
                                       <stop offset="0%" stop-color="#9356DC" />
                                       <stop offset="100%" stop-color="#FF79DA" />
                                 </linearGradient>
@@ -230,14 +233,14 @@ crossorigin="anonymous">
 
 
 <!--FOOTER-->
-    <footer>
+    <footer class="footer">
         <h1>ohmyfood!</h1>
     
-        <ul>
-            <li class="foot_news"><i class="fas fa-utensils"></i>Proposer un restaurant</li>
-            <li class="foot_news"><i class="fas fa-hands-helping"></i>Devenir partenaire</li>
-            <li class="foot_news">Mentions légales</li>
-            <li class="foot_news"><a href="mailto:contact@ohmyfood.fr"></a> Contact</li>
+        <ul class="footer_bloc">
+            <li><i class="fas fa-utensils"></i>Proposer un restaurant</li>
+            <li><i class="fas fa-hands-helping"></i>Devenir partenaire</li>
+            <li>Mentions légales</li>
+            <li class="foot_news"><a href="mailto:contact@ohmyfood.com"></a> Contact</li>
         </ul>
     </footer>
 </body>
