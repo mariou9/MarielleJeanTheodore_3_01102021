@@ -166,7 +166,7 @@ header{
         & i{
         color:grey;
         padding-right: 15px;
-        padding-left: -15px;
+        padding-left: 15px;
         }
 
         & p{
@@ -231,9 +231,9 @@ header{
         justify-content: space-evenly;
         color: black;
         text-align: center;   
-        font-size: 1.1 rem;
+        font-size: 1.1rem;
         margin: 2px;
-        line-height: none;
+        line-height: 2rem;
     }
     form{
         margin: auto;
@@ -438,8 +438,8 @@ margin: 0;
 }
 .resto_title{
     padding-left: 10px;
-    padding-top: -10px;
-    padding-bottom: -10px;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
     margin-top: 5px;   
 }
 
